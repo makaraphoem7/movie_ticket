@@ -9,11 +9,15 @@ class MovieList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: movies.length,
-      itemBuilder: (context, index) {
-        return MovieCard(movie: movies[index]);
-      },
+    return SizedBox(
+      height: 160, // Set height to fit MovieCard
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal, // Horizontal scroll
+        itemCount: movies.length,
+        itemBuilder: (context, index) {
+          return MovieCard(movie: movies[index]);
+        },
+      ),
     );
   }
 }

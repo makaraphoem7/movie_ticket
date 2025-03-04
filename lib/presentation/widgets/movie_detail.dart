@@ -31,11 +31,9 @@ class MovieDetail extends StatelessWidget {
                   child: IconButton(
                       icon: Icon(Icons.arrow_back, color: Colors.white),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
-                        );
-                      }),
+                        Navigator.pop(context);
+                      },
+                    ),
                 ),
               ),
               Positioned(

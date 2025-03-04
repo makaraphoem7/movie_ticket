@@ -18,7 +18,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
       onTap: onTap,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        // BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.fire), label: 'New'),
+        BottomNavigationBarItem(icon: Icon(Icons.local_fire_department), label: 'New'),
         BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
         BottomNavigationBarItem(icon: Icon(Icons.download), label: 'Download'),
       ],
