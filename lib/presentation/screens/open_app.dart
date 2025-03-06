@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main.dart'; // Import MainWrapper
+import 'package:flutter_application_1/main.dart';
+import 'login_screen.dart'; // Import the LoginScreen
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,37 +21,27 @@ class _SplashScreenState extends State<SplashScreen>
     // Initialize animation controller
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2), // Animation duration
+      duration: const Duration(seconds: 2),
     );
-    // Initialize opacity animation
-    _opacityAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
 
-    // Initialize scale animation
+    _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
     _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut, // Add a curve for smooth scaling
-      ),
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
     // Start the animation
     _controller.forward();
 
-    // Navigate to MainWrapper after 3 seconds with a fade transition
-    Future.delayed(Duration(seconds: 2), () {
+    // Navigate to LoginScreen after animation completes
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              MainWrapper(),
+              const LoginScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return FadeTransition(
-              opacity: animation, // Apply fade transition
-              child: child,
-            );
+            return FadeTransition(opacity: animation, child: child);
           },
-          transitionDuration:
-              Duration(milliseconds: 1000), // Transition duration
+          transitionDuration: const Duration(milliseconds: 1000),
         ),
       );
     });
@@ -58,40 +49,29 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
-    _controller.dispose(); // Dispose the controller
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Set background color to black
       body: Center(
         child: AnimatedBuilder(
           animation: _controller,
           builder: (context, child) {
             return Opacity(
-              opacity: _opacityAnimation.value, // Apply opacity animation
+              opacity: _opacityAnimation.value,
               child: Transform.scale(
-                scale: _scaleAnimation.value, // Apply scale animation
+                scale: _scaleAnimation.value,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Add your logo or splash image here
                     Image.asset(
-                      'lib/assets/images/logo_app.png', // Replace with your logo asset
+                      'lib/assets/images/logo_app.png',
                       width: 300,
                       height: 300,
                     ),
-                    // SizedBox(height: 10),
-                    // Text(
-                    //   'Movie App',
-                    //   style: TextStyle(
-                    //     color: Colors.white,
-                    //     fontSize: 24,
-                    //     fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
