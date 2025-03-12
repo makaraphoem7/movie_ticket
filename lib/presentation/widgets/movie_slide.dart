@@ -92,7 +92,6 @@ class _BannerSliderState extends State<BannerSlider> {
             },
           ),
         ),
-
         // Dot Indicator
         const SizedBox(height: 16),
         Row(
