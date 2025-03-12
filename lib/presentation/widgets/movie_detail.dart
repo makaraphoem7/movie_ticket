@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../screens/home_screen.dart';
 import '../../data/models/movie.dart';
 
 class MovieDetail extends StatelessWidget {
@@ -29,11 +28,11 @@ class MovieDetail extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: Colors.black54,
                   child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
+                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 ),
               ),
               Positioned(

@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const Text(
                     'Most Popular',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
                   TextButton(
                     onPressed: () {

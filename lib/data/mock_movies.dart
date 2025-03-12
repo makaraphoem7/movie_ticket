@@ -28,7 +28,43 @@ class MockMovies {
         megabyteofmovie: '1.8GB',
       ),
       Movie(
-        id: 3,
+        id: 4,
+        title: 'Interstellar',
+        overview:
+            'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
+        posterPath: '/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+        voteAverage: 8.6,
+        releaseDate: DateTime(2014, 11, 7),
+        movieType: 'Sci-Fi',
+        timerofmovie: '2h 49m',
+        megabyteofmovie: '2.1GB',
+      ),
+      Movie(
+        id: 5,
+        title: 'Interstellar',
+        overview:
+            'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
+        posterPath: '/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+        voteAverage: 8.6,
+        releaseDate: DateTime(2014, 11, 7),
+        movieType: 'Sci-Fi',
+        timerofmovie: '2h 49m',
+        megabyteofmovie: '2.1GB',
+      ),
+      Movie(
+        id: 6,
+        title: 'Interstellar',
+        overview:
+            'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
+        posterPath: '/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+        voteAverage: 8.6,
+        releaseDate: DateTime(2014, 11, 7),
+        movieType: 'Sci-Fi',
+        timerofmovie: '2h 49m',
+        megabyteofmovie: '2.1GB',
+      ),
+      Movie(
+        id: 7,
         title: 'Interstellar',
         overview:
             'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',

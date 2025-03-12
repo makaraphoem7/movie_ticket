@@ -50,8 +50,8 @@ class _MainWrapperState extends State<MainWrapper> {
   // List of screens to display based on the selected index
   final List<Widget> _screens = [
     HomeScreen(),
-    SearchScreen(),
     FavoritesScreen(),
+    SearchScreen(),
     ProfileScreen(),
   ];
 
