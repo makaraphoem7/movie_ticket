@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../widgets/movie_list.dart';
-import '../widgets/movie_slide.dart';
-import '../widgets/drawer_menu.dart';
-import '../widgets/category_list.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
+import '../../widgets/movie_list.dart';
+import '../../widgets/movie_slide.dart';
+import '../../widgets/drawer_menu.dart';
+import '../../widgets/category_list.dart';
 import '../../data/mock_movies.dart';
 import '../../data/banner_slide.dart';
 import '../../data/categories.dart';
@@ -42,17 +43,17 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween, // Align left and right
                 children: [
-                  const Text(
+                  Text(
                     'Most Popular',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.white),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: AppConstants.whiteColor),
                   ),
                   TextButton(
                     onPressed: () {
                       // Navigate to see all movies or any action
                     },
-                    child: const Text(
+                    child: Text(
                       'See All',
-                      style: TextStyle(fontSize: 16, color: Colors.blue),
+                      style: TextStyle(fontSize: 16, color: AppConstants.blueColor),
                     ),
                   ),
                 ],

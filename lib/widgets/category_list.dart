@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../data/models/category.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
+import '../data/models/category.dart';
 
 class CategoryList extends StatefulWidget {
   final List<Category> categories;
@@ -67,12 +68,12 @@ class CategoryCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16), // Add padding for better appearance
         constraints: const BoxConstraints(minWidth: 60), // Minimum width to prevent too small cards
         decoration: BoxDecoration(
-          color: isSelected ? Colors.red : const Color.fromARGB(167, 20, 20, 20),
+          color: isSelected ? AppConstants.secondaryColor : const Color.fromARGB(167, 20, 20, 20),
           borderRadius: BorderRadius.circular(24),
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: Colors.redAccent.withOpacity(0.4),
+                    color: AppConstants.secondaryColor.withOpacity(0.4),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
@@ -82,8 +83,8 @@ class CategoryCard extends StatelessWidget {
         child: Center(
           child: Text(
             category.name,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: AppConstants.whiteColor,
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),

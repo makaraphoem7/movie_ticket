@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
 
 class CustomDrawer extends StatefulWidget {
   final Function(int) onItemSelected;
@@ -29,10 +30,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   backgroundImage: AssetImage('assets/images/profile.jpg'),
                 ),
                 const SizedBox(width: 10),
-                const Text(
+                Text(
                   'Movies',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppConstants.whiteColor,
                     fontSize: 24,
                   ),
                 ),
@@ -40,16 +41,16 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home, color: Colors.white),
-            title: const Text('Home', style: TextStyle(color: Colors.white)),
+            leading: Icon(Icons.home, color: AppConstants.whiteColor),
+            title: Text('Home', style: TextStyle(color: AppConstants.whiteColor)),
             onTap: () => widget.onItemSelected(0),
           ),
           ListTile(
-            leading: const Icon(Icons.notifications, color: Colors.white),
-            title: const Text('Notification', style: TextStyle(color: Colors.white)),
+            leading: Icon(Icons.notifications, color: AppConstants.whiteColor),
+            title: Text('Notification', style: TextStyle(color: AppConstants.whiteColor)),
             trailing: Icon(
               isNotificationEnabled ? Icons.toggle_on : Icons.toggle_off,
-              color: isNotificationEnabled ? Colors.green : Colors.grey,
+              color: isNotificationEnabled ? AppConstants.greenColor : AppConstants.greyColor,
               size: 30,
             ),
             onTap: () {
@@ -60,8 +61,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.person, color: Colors.white),
-            title: const Text('Profile', style: TextStyle(color: Colors.white)),
+            leading: Icon(Icons.person, color: AppConstants.whiteColor),
+            title: Text('Profile', style: TextStyle(color: AppConstants.whiteColor)),
             onTap: () => widget.onItemSelected(2),
           ),
         ],

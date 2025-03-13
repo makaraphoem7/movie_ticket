@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../data/models/banner.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
+import '../data/models/banner.dart';
 
 class BannerSlider extends StatefulWidget {
   final List<CustomBanner> banners;
@@ -104,7 +105,7 @@ class _BannerSliderState extends State<BannerSlider> {
               height: 8,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
-                color: _currentPage == index ? Colors.red : Colors.grey.shade400,
+                color: _currentPage == index ? AppConstants.secondaryColor : AppConstants.greyColor,
               ),
             );
           }),

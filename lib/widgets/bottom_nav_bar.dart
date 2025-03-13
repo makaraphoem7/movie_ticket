@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -14,7 +15,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: Colors.black,
+      backgroundColor: AppConstants.primaryColor,
       currentIndex: currentIndex,
       onTap: onTap,
       type: BottomNavigationBarType.fixed,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
+import 'package:flutter_application_1/routes/app_routes.dart';
 import '../../main.dart'; // Ensure you have MainWrapper for navigation
 
 class LoginScreen extends StatefulWidget {
@@ -24,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       if (_usernameController.text == 'user' &&
           _passwordController.text == '123456') {
+        // Navigator.pushReplacementNamed(context, Routes.homescreen);
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const MainWrapper()),
@@ -47,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppConstants.primaryColor,
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
@@ -58,27 +61,27 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 // Logo
                 Image.asset(
-                  'lib/assets/images/logo_app.png',
+                  'assets/images/logo_app.png',
                   width: 120,
                   height: 120,
                 ),
                 const SizedBox(height: 32),
 
                 // Title
-                const Text(
+                Text(
                   "Welcome Back!",
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: Colors.redAccent,
+                    color: AppConstants.secondaryColor,
                   ),
                 ),
                 const SizedBox(height: 8),
-                const Text(
+                Text(
                   "Login to continue",
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.grey,
+                    color: AppConstants.greyColor,
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -113,9 +116,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       // Forgot Password logic here
                     },
-                    child: const Text(
+                    child: Text(
                       "Forgot Password?",
-                      style: TextStyle(color: Colors.redAccent),
+                      style: TextStyle(color: AppConstants.secondaryColor),
                     ),
                   ),
                 ),
@@ -125,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ElevatedButton(
                   onPressed: _isLoading ? null : _handleLogin,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.redAccent,
+                    backgroundColor: AppConstants.secondaryColor,
                     minimumSize: const Size(double.infinity, 55),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
@@ -153,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // Divider with "or"
                 Row(
                   children: [
-                    const Expanded(child: Divider(color: Colors.grey)),
+                    Expanded(child: Divider(color: AppConstants.greyColor)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
@@ -161,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(color: Colors.grey[400]),
                       ),
                     ),
-                    const Expanded(child: Divider(color: Colors.grey)),
+                    Expanded(child: Divider(color: AppConstants.greyColor)),
                   ],
                 ),
                 const SizedBox(height: 30),
@@ -189,17 +192,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       "Don't have an account?",
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyle(color: AppConstants.greyColor),
                     ),
                     TextButton(
                       onPressed: () {
-                        // Navigate to Sign-Up Screen
+                        Navigator.pushReplacementNamed(context, Routes.signup);
                       },
-                      child: const Text(
+                      child: Text(
                         "Sign Up",
-                        style: TextStyle(color: Colors.redAccent),
+                        style: TextStyle(color: AppConstants.secondaryColor),
                       ),
                     ),
                   ],
@@ -223,12 +226,12 @@ class _LoginScreenState extends State<LoginScreen> {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: AppConstants.whiteColor),
       validator: validator,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(color: Colors.grey[400]),
-        prefixIcon: Icon(icon, color: Colors.redAccent),
+        prefixIcon: Icon(icon, color: AppConstants.secondaryColor),
         filled: true,
         fillColor: Colors.grey[900],
         border: OutlineInputBorder(
@@ -255,7 +258,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         child: Row(
           children: [
-            Icon(icon, color: Colors.redAccent, size: 28),
+            Icon(icon, color: AppConstants.secondaryColor, size: 28),
             const SizedBox(width: 10),
             Text(
               label,

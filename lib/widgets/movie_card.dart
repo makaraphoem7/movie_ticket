@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../data/models/movie.dart';
-import '../screens/movie_detail_screen.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
+import '../data/models/movie.dart';
+import '../screens/detail/movie_detail_screen.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
@@ -40,10 +41,10 @@ class MovieCard extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis, // Prevents overflow
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
-                  color: Colors.white
+                  color: AppConstants.whiteColor
                 ),
               ),
             ),

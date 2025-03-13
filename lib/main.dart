@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'presentation/screens/home_screen.dart';
-import 'presentation/screens/open_app.dart';
-import 'presentation/screens/search_screen.dart';
-import 'presentation/screens/favorites_screen.dart';
-import 'presentation/screens/profile_screen.dart';
-import 'presentation/widgets/bottom_nav_bar.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
+import 'package:flutter_application_1/routes/app_router.dart';
+import 'screens/home/home_screen.dart';
+import 'screens/boarding/open_app.dart';
+import 'screens/search/search_screen.dart';
+import 'screens/favorites_screen.dart';
+import 'screens/account/profile_screen.dart';
+import 'widgets/bottom_nav_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,20 +19,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Movie App',
+      navigatorKey: AppRouter.navigatorKey,
       debugShowCheckedModeBanner: false, // Remove the debug banner
+      onGenerateRoute: AppRouter.generateRoute,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: AppConstants.blackColor,
+          iconTheme: IconThemeData(color: AppConstants.whiteColor),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Colors.black,
-          selectedItemColor: Colors.redAccent,
-          unselectedItemColor: Colors.grey,
+          backgroundColor: AppConstants.primaryColor,
+          selectedItemColor: AppConstants.secondaryColor,
+          unselectedItemColor: AppConstants.greyColor,
         ),
-        primarySwatch: Colors.blue,
         fontFamily: 'Roboto',
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: AppConstants.blackColor,
       ),
       home: SplashScreen(), // Start with Splash Screen
     );

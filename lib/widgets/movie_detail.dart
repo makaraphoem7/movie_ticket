@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../data/models/movie.dart';
+import 'package:flutter_application_1/constants/app_constants.dart';
+import '../data/models/movie.dart';
 
 class MovieDetail extends StatelessWidget {
   const MovieDetail({
@@ -26,9 +27,9 @@ class MovieDetail extends StatelessWidget {
                 top: 40,
                 left: 16,
                 child: CircleAvatar(
-                  backgroundColor: Colors.black54,
+                  backgroundColor: AppConstants.primaryColor,
                   child: IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    icon: Icon(Icons.arrow_back, color: AppConstants.whiteColor),
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -39,9 +40,9 @@ class MovieDetail extends StatelessWidget {
                 top: 150,
                 left: MediaQuery.of(context).size.width / 2 - 30,
                 child: CircleAvatar(
-                  backgroundColor: Colors.black54,
+                  backgroundColor: AppConstants.primaryColor,
                   child: IconButton(
-                    icon: Icon(Icons.play_arrow_outlined, color: Colors.white),
+                    icon: Icon(Icons.play_arrow_outlined, color: AppConstants.whiteColor),
                     onPressed: () {},
                   ),
                 ),
@@ -58,50 +59,50 @@ class MovieDetail extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: AppConstants.whiteColor,
                   ),
                 ),
                 SizedBox(height: 8),
                 Text(
                   movie.overview,
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: AppConstants.greyColor),
                 ),
                 SizedBox(height: 16),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: AppConstants.secondaryColor,
                     minimumSize: Size(double.infinity, 50),
                   ),
                   onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.play_arrow_outlined, color: Colors.white),
+                      Icon(Icons.play_arrow_outlined, color: AppConstants.whiteColor),
                       SizedBox(width: 8),
-                      Text('Play Now', style: TextStyle(color: Colors.white)),
+                      Text('Play Now', style: TextStyle(color: AppConstants.whiteColor)),
                     ],
                   ),
                 ),
                 SizedBox(height: 10),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: Colors.white),
+                    side: BorderSide(color: AppConstants.whiteColor),
                     minimumSize: Size(double.infinity, 50),
                   ),
                   onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.download_outlined, color: Colors.white),
+                      Icon(Icons.download_outlined, color: AppConstants.whiteColor),
                       SizedBox(width: 8),
-                      Text('Download', style: TextStyle(color: Colors.white)),
+                      Text('Download', style: TextStyle(color: AppConstants.whiteColor)),
                     ],
                   ),
                 ),
                 SizedBox(height: 16),
                 Text(
                   movie.overview,
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: AppConstants.greyColor),
                 ),
                 SizedBox(height: 16),
                 Text(
@@ -109,15 +110,15 @@ class MovieDetail extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: AppConstants.whiteColor,
                   ),
                 ),
-                Divider(color: Colors.white),
+                Divider(color: AppConstants.whiteColor),
                 SizedBox(height: 16),
                 Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.grey[900],
+                    color: AppConstants.greyColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
@@ -141,21 +142,21 @@ class MovieDetail extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: AppConstants.whiteColor,
                               ),
                             ),
                             Text(
                               '${movie.movieType} | ${movie.movieType}',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: AppConstants.greyColor),
                             ),
                             Text(
                               '${movie.timerofmovie} | ${movie.megabyteofmovie}',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: AppConstants.greyColor),
                             ),
                           ],
                         ),
                       ),
-                      Icon(Icons.download_outlined, color: Colors.white),
+                      Icon(Icons.download_outlined, color: AppConstants.whiteColor),
                     ],
                   ),
                 ),
