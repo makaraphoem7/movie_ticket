@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/app_constants.dart';
 import 'package:flutter_application_1/routes/app_router.dart';
+import 'package:flutter_application_1/screens/new_movie/new_movie_screen.dart';
 import 'screens/home/home_screen.dart';
 import 'screens/boarding/open_app.dart';
 import 'screens/search/search_screen.dart';
-import 'screens/favorites_screen.dart';
 import 'screens/account/profile_screen.dart';
 import 'widgets/bottom_nav_bar.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Movie App',
       navigatorKey: AppRouter.navigatorKey,
-      debugShowCheckedModeBanner: false, // Remove the debug banner
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Roboto',
         scaffoldBackgroundColor: AppConstants.blackColor,
       ),
-      home: SplashScreen(), // Start with Splash Screen
+      home: SplashScreen(),
     );
   }
 }
@@ -48,12 +48,10 @@ class MainWrapper extends StatefulWidget {
 }
 
 class _MainWrapperState extends State<MainWrapper> {
-  int _currentIndex = 0; // Track the selected index
-
-  // List of screens to display based on the selected index
+  int _currentIndex = 0;
   final List<Widget> _screens = [
     HomeScreen(),
-    FavoritesScreen(),
+    NewMovieScreen(),
     SearchScreen(),
     ProfileScreen(),
   ];

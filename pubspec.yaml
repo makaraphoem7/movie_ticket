@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider: ^6.0.1
   shared_preferences: ^2.2.2
+  dropdown_search: ^6.0.2
   # video_player: ^2.8.2
   # intl: ^0.18.1
 
