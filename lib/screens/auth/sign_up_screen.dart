@@ -125,11 +125,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             strokeWidth: 2.5,
                           ),
                         )
-                      : const Text(
+                      : Text(
                           "Sign Up",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                            color: AppConstants.whiteColor,
                           ),
                         ),
                 ),
