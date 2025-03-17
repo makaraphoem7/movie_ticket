@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_constants.dart';
-import 'package:flutter_application_1/routes/app_router.dart';
-import 'package:flutter_application_1/screens/new_movie/new_movie_screen.dart';
+import '../constants/app_constants.dart';
+import '../routes/app_router.dart';
+import '../screens/new_movie/new_movie_screen.dart';
 import 'screens/home/home_screen.dart';
 import 'screens/boarding/open_app.dart';
 import 'screens/search/search_screen.dart';

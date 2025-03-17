@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_constants.dart';
-import 'package:flutter_application_1/data/mock_movies.dart';
-import 'package:flutter_application_1/widgets/movie_card.dart';
-import 'package:flutter_application_1/widgets/custom_app_bar.dart';
+import '../../constants/app_constants.dart';
+import '../../data/mock_movies.dart';
+import '../../widgets/movie_card.dart';
+import '../../widgets/custom_app_bar.dart';
 import '../../widgets/drawer_menu.dart';
 
 class NewMovieScreen extends StatelessWidget {

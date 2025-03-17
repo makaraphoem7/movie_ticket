@@ -1,15 +1,13 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_constants.dart';
-import 'package:flutter_application_1/main.dart';
-import 'package:flutter_application_1/screens/account/profile_screen.dart';
-import 'package:flutter_application_1/screens/auth/login_screen.dart';
-import 'package:flutter_application_1/screens/auth/sign_up_screen.dart';
-import 'package:flutter_application_1/screens/boarding/open_app.dart';
-import 'package:flutter_application_1/screens/home/home_screen.dart';
-import 'package:flutter_application_1/screens/detail/movie_detail_screen.dart';
-import 'package:flutter_application_1/screens/search/search_screen.dart';
+import '../constants/app_constants.dart';
+import '../main.dart';
+import '../screens/account/profile_screen.dart';
+import '../screens/auth/login_screen.dart';
+import '../screens/auth/sign_up_screen.dart';
+import '../screens/boarding/open_app.dart';
+import '../screens/home/home_screen.dart';
+import '../screens/detail/movie_detail_screen.dart';
+import '../screens/search/search_screen.dart';
 import '../data/models/movie.dart';
 
 import 'app_routes.dart';

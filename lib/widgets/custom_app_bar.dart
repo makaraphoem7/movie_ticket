@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/search/search_screen.dart';
+import '../routes/app_routes.dart';
+import '../../constants/app_constants.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -10,26 +13,36 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title,
-        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        style: TextStyle(color: AppConstants.whiteColor, fontWeight: FontWeight.bold),
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: AppConstants.blackColor,
       elevation: 0,
       
       // Sidebar Menu Icon
       leading: Builder(
         builder: (context) => IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
+          icon: Icon(Icons.menu, color: AppConstants.whiteColor),
           onPressed: () {
-            Scaffold.of(context).openDrawer(); // ✅ Open sidebar (drawer)
+            Scaffold.of(context).openDrawer();
           },
         ),
       ),
 
-      actions: const [
-        Icon(Icons.search, color: Colors.white),
-        SizedBox(width: 20),
-        Icon(Icons.notifications_none, color: Colors.white),
-        SizedBox(width: 10),
+      actions: [
+       IconButton(
+          icon: Icon(Icons.search, color: AppConstants.whiteColor),
+          onPressed: () {
+            // Navigate to the SearchScreen
+            // Navigator.pushReplacementNamed(context, Routes.searchscreen);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const SearchScreen()),
+            );
+          },
+        ),
+        const SizedBox(width: 20),
+        Icon(Icons.notifications_none, color: AppConstants.whiteColor),
+        const SizedBox(width: 10),
       ],
     );
   }

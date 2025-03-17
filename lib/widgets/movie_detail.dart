@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_constants.dart';
+import '../constants/app_constants.dart';
 import '../data/models/movie.dart';
 
 class MovieDetail extends StatelessWidget {

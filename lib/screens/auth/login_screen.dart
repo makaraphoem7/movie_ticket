@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_constants.dart';
-import 'package:flutter_application_1/routes/app_routes.dart';
-import '../../main.dart'; // Ensure you have MainWrapper for navigation
+import '../../constants/app_constants.dart';
+import '../../routes/app_routes.dart';
+import '../../main.dart';
+import '../../widgets/custom_input_field.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,17 +17,13 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool _isLoading = false;
 
-  // Handle Login with Validation
   void _handleLogin() async {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
-
-      // Simulate network request delay
       await Future.delayed(const Duration(seconds: 2));
 
       if (_usernameController.text == 'user' &&
           _passwordController.text == '123456') {
-        // Navigator.pushReplacementNamed(context, Routes.homescreen);
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const MainWrapper()),
@@ -40,7 +37,6 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  // Handle Social Login (Simulated)
   void _handleSocialLogin(String platform) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Logged in with $platform')),
@@ -59,15 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Logo
-                Image.asset(
-                  'assets/images/logo_app.png',
-                  width: 120,
-                  height: 120,
-                ),
+                Image.asset('assets/images/logo_app.png', width: 200, height: 200),
                 const SizedBox(height: 32),
 
-                // Title
                 Text(
                   "Welcome Back!",
                   style: TextStyle(
@@ -77,133 +67,96 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  "Login to continue",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: AppConstants.greyColor,
-                  ),
-                ),
+                Text("Login to continue", style: TextStyle(fontSize: 16, color: AppConstants.greyColor)),
                 const SizedBox(height: 40),
 
                 // Username Field
-                _buildInputField(
+                CustomInputField(
                   controller: _usernameController,
                   hintText: 'Username',
                   icon: Icons.person,
-                  validator: (value) => value!.isEmpty
-                      ? 'Username cannot be empty'
-                      : null,
+                  validator: (value) => value!.isEmpty ? 'Username cannot be empty' : null,
                 ),
                 const SizedBox(height: 20),
 
                 // Password Field
-                _buildInputField(
+                CustomInputField(
                   controller: _passwordController,
                   hintText: 'Password',
                   icon: Icons.lock,
                   obscureText: true,
-                  validator: (value) => value!.length < 6
-                      ? 'Password must be at least 6 characters'
-                      : null,
+                  validator: (value) => value!.length < 6 ? 'Password must be at least 6 characters' : null,
                 ),
                 const SizedBox(height: 10),
 
-                // Forgot Password Link
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {
-                      // Forgot Password logic here
-                    },
-                    child: Text(
-                      "Forgot Password?",
-                      style: TextStyle(color: AppConstants.secondaryColor),
-                    ),
+                    onPressed: () {},
+                    child: Text("Forgot Password?", style: TextStyle(color: AppConstants.secondaryColor)),
                   ),
                 ),
                 const SizedBox(height: 20),
 
-                // Login Button
+                // Login Button with loading state
                 ElevatedButton(
                   onPressed: _isLoading ? null : _handleLogin,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppConstants.secondaryColor,
+                    backgroundColor: _isLoading
+                        ? AppConstants.secondaryColor.withOpacity(0.7) // Slightly reduced opacity
+                        : AppConstants.secondaryColor,
                     minimumSize: const Size(double.infinity, 55),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    elevation: 5, // Add elevation for a floating button effect
+                    shadowColor: Colors.black.withOpacity(0.8),
                   ),
                   child: _isLoading
                       ? const SizedBox(
                           width: 26,
                           height: 26,
-                          child: CircularProgressIndicator(
-                            color: Colors.white,
-                            strokeWidth: 2.5,
-                          ),
+                          child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5),
                         )
                       : const Text(
                           "Login",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                            color: Colors.white, // Keep the text white
                           ),
                         ),
                 ),
+
                 const SizedBox(height: 40),
 
-                // Divider with "or"
                 Row(
                   children: [
                     Expanded(child: Divider(color: AppConstants.greyColor)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        "OR",
-                        style: TextStyle(color: Colors.grey[400]),
-                      ),
+                      child: Text("OR", style: TextStyle(color: Colors.grey[400])),
                     ),
                     Expanded(child: Divider(color: AppConstants.greyColor)),
                   ],
                 ),
                 const SizedBox(height: 30),
 
-                // Social Login Buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildSocialButton(
-                      icon: Icons.g_mobiledata,
-                      label: "Google",
-                      onTap: () => _handleSocialLogin("Google"),
-                    ),
+                    _buildSocialButton(Icons.g_mobiledata, "Google", () => _handleSocialLogin("Google")),
                     const SizedBox(width: 16),
-                    _buildSocialButton(
-                      icon: Icons.facebook,
-                      label: "Facebook",
-                      onTap: () => _handleSocialLogin("Facebook"),
-                    ),
+                    _buildSocialButton(Icons.facebook, "Facebook", () => _handleSocialLogin("Facebook")),
                   ],
                 ),
                 const SizedBox(height: 40),
 
-                // Sign Up Link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Don't have an account?",
-                      style: TextStyle(color: AppConstants.greyColor),
-                    ),
+                    Text("Don't have an account?", style: TextStyle(color: AppConstants.greyColor)),
                     TextButton(
-                      onPressed: () {
-                        Navigator.pushReplacementNamed(context, Routes.signup);
-                      },
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(color: AppConstants.secondaryColor),
-                      ),
+                      onPressed: () => Navigator.pushReplacementNamed(context, Routes.signup),
+                      child: Text("Sign Up", style: TextStyle(color: AppConstants.secondaryColor)),
                     ),
                   ],
                 ),
@@ -215,39 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  // Input Field Widget
-  Widget _buildInputField({
-    required TextEditingController controller,
-    required String hintText,
-    required IconData icon,
-    bool obscureText = false,
-    required FormFieldValidator<String> validator,
-  }) {
-    return TextFormField(
-      controller: controller,
-      obscureText: obscureText,
-      style: TextStyle(color: AppConstants.whiteColor),
-      validator: validator,
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: TextStyle(color: Colors.grey[400]),
-        prefixIcon: Icon(icon, color: AppConstants.secondaryColor),
-        filled: true,
-        fillColor: Colors.grey[900],
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide.none,
-        ),
-      ),
-    );
-  }
-
-  // Social Login Button
-  Widget _buildSocialButton({
-    required IconData icon,
-    required String label,
-    required VoidCallback onTap,
-  }) {
+  Widget _buildSocialButton(IconData icon, String label, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -255,15 +176,13 @@ class _LoginScreenState extends State<LoginScreen> {
         decoration: BoxDecoration(
           color: Colors.grey[900],
           borderRadius: BorderRadius.circular(12),
+          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), spreadRadius: 2, blurRadius: 5)], // Shadow effect
         ),
         child: Row(
           children: [
             Icon(icon, color: AppConstants.secondaryColor, size: 28),
             const SizedBox(width: 10),
-            Text(
-              label,
-              style: const TextStyle(color: Colors.white, fontSize: 16),
-            ),
+            Text(label, style: const TextStyle(color: Colors.white, fontSize: 16)),
           ],
         ),
       ),

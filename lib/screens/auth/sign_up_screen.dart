@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_constants.dart';
-import 'package:flutter_application_1/main.dart';
+import '../../constants/app_constants.dart';
+import '../../main.dart';
 import 'login_screen.dart'; // Ensure this path is correct
+import '../../widgets/custom_input_field.dart'; // Import the new widget
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -30,9 +31,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       );
 
       Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const MainWrapper()),
-        );
+        context,
+        MaterialPageRoute(builder: (context) => const MainWrapper()),
+      );
     }
   }
 
@@ -51,8 +52,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Logo
                 Image.asset(
                   'assets/images/logo_app.png',
-                  width: 120,
-                  height: 120,
+                  width: 200,
+                  height: 200,
                 ),
                 const SizedBox(height: 32),
 
@@ -68,48 +69,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 40),
 
                 // Username Field
-                _buildInputField(
+                CustomInputField(
                   controller: _usernameController,
                   hintText: 'Username',
                   icon: Icons.person,
-                  validator: (value) => value!.isEmpty
-                      ? 'Username cannot be empty'
-                      : null,
+                  validator: (value) => value!.isEmpty ? 'Username cannot be empty' : null,
                 ),
                 const SizedBox(height: 20),
 
                 // Email Field
-                _buildInputField(
+                CustomInputField(
                   controller: _emailController,
                   hintText: 'Email',
                   icon: Icons.email,
-                  validator: (value) => value!.isEmpty || !value.contains('@')
-                      ? 'Enter a valid email'
-                      : null,
+                  validator: (value) => value!.isEmpty || !value.contains('@') ? 'Enter a valid email' : null,
                 ),
                 const SizedBox(height: 20),
 
                 // Password Field
-                _buildInputField(
+                CustomInputField(
                   controller: _passwordController,
                   hintText: 'Password',
                   icon: Icons.lock,
                   obscureText: true,
-                  validator: (value) => value!.length < 6
-                      ? 'Password must be at least 6 characters'
-                      : null,
+                  validator: (value) => value!.length < 6 ? 'Password must be at least 6 characters' : null,
                 ),
                 const SizedBox(height: 20),
 
                 // Confirm Password Field
-                _buildInputField(
+                CustomInputField(
                   controller: _confirmPasswordController,
                   hintText: 'Confirm Password',
                   icon: Icons.lock_outline,
                   obscureText: true,
-                  validator: (value) => value != _passwordController.text
-                      ? 'Passwords do not match'
-                      : null,
+                  validator: (value) => value != _passwordController.text ? 'Passwords do not match' : null,
                 ),
                 const SizedBox(height: 40),
 
@@ -154,8 +147,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginScreen()),
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
                         );
                       },
                       child: Text(
@@ -168,33 +160,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  // Input Field Widget
-  Widget _buildInputField({
-    required TextEditingController controller,
-    required String hintText,
-    required IconData icon,
-    bool obscureText = false,
-    required FormFieldValidator<String> validator,
-  }) {
-    return TextFormField(
-      controller: controller,
-      obscureText: obscureText,
-      style: TextStyle(color: AppConstants.whiteColor),
-      validator: validator,
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: TextStyle(color: Colors.grey[400]),
-        prefixIcon: Icon(icon, color: AppConstants.secondaryColor),
-        filled: true,
-        fillColor: Colors.grey[900],
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide.none,
         ),
       ),
     );

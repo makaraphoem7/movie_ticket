@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_constants.dart';
+import 'package:flutter_application_1/widgets/custom_app_bar.dart';
+import '../../constants/app_constants.dart';
 import '../../widgets/movie_list.dart';
 import '../../widgets/movie_slide.dart';
 import '../../widgets/drawer_menu.dart';
@@ -18,20 +19,21 @@ class HomeScreen extends StatelessWidget {
     final categories = Categories.getCategories();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Movie App', style: TextStyle(color: Colors.white)),
-        actions: const [
-          Icon(Icons.search),
-          SizedBox(width: 20),
-          Icon(Icons.notifications_none),
-          SizedBox(width: 10),
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Movie App', style: TextStyle(color: Colors.white)),
+      //   actions: const [
+      //     Icon(Icons.search),
+      //     SizedBox(width: 20),
+      //     Icon(Icons.notifications_none),
+      //     SizedBox(width: 10),
+      //   ],
+      // ),
       drawer: CustomDrawer(
         onItemSelected: (index) {
           debugPrint('Selected index: $index');
         },
       ),
+      appBar: const CustomAppBar(title: "Movie App"),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
