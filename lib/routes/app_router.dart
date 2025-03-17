@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constants/app_constants.dart';
 import '../main.dart';
+import '../constants/app_constants.dart';
+import '../screens/account/about_screen.dart';
 import '../screens/account/profile_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/sign_up_screen.dart';
@@ -53,10 +54,15 @@ class AppRouter {
           SearchScreen(),
           Routes.searchscreen,
         );
-      case Routes.profilescreen:
+      // case Routes.profilescreen:
+      //   return _routeBuilder(
+      //     ProfileScreen(),
+      //     Routes.profilescreen,
+      //   );
+      case Routes.aboutUs:
         return _routeBuilder(
-          ProfileScreen(),
-          Routes.profilescreen,
+          AboutUsScreen(),
+          Routes.aboutUs,
         );
       case Routes.detailscreen:
        if (args is Movie) {

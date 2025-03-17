@@ -8,4 +8,5 @@ abstract class Routes {
   static const searchscreen = '/searchscreen';
   static const detailscreen = '/detailscreen';
   static const profilescreen = '/profilescreen';
+  static const aboutUs = '/aboutusscreen';
 }

@@ -62,7 +62,17 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return ListTile(
       leading: Icon(icon, color: AppConstants.whiteColor),
       title: Text(title, style: TextStyle(color: AppConstants.whiteColor)),
-      onTap: () => widget.onItemSelected(index),
+      onTap: () {
+        Navigator.pop(context); // Close the drawer
+        if (index == 2) {
+          Navigator.pushNamed(context, Routes.profilescreen);
+        } else if (index == 4) {
+          Navigator.pushNamed(context, Routes.aboutUs);
+        } else {
+          widget.onItemSelected(index);
+        }
+
+      },
     );
   }
 
