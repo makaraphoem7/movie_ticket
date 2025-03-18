@@ -5,7 +5,7 @@ class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0C142C), // Background color matching your theme
+      backgroundColor: AppConstants.blackColor, // Background color matching your theme
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(

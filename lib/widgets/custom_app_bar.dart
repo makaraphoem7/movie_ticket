@@ -60,7 +60,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Container(
                 padding: EdgeInsets.all(4),
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: AppConstants.secondaryColor,
                   shape: BoxShape.circle,
                 ),
                 constraints: BoxConstraints(
@@ -70,7 +70,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: Text(
                   '3', // Example unread count
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppConstants.whiteColor,
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
                   ),

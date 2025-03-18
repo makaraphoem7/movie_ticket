@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../routes/app_routes.dart';
 import '../constants/app_constants.dart';
-import 'custom_dialog.dart'; // Import the dialog widget
+import 'custom_dialog.dart';
 
 class CustomDrawer extends StatefulWidget {
   final Function(int) onItemSelected;
@@ -12,13 +12,13 @@ class CustomDrawer extends StatefulWidget {
 }
 
 class _CustomDrawerState extends State<CustomDrawer> {
-  bool isNotificationEnabled = false; // State to track icon status
+  bool isNotificationEnabled = false;
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Color(0xFF0C142C),
-      child: SingleChildScrollView( // Prevents overflow
+      child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             DrawerHeader(
@@ -32,7 +32,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     Padding(
                       padding: const EdgeInsets.only(top: 15),
                       child: CircleAvatar(
-                        radius: 50, // Logo size
+                        radius: 50,
                         backgroundImage: AssetImage('assets/images/logo_app.png'),
                       ),
                     ),
@@ -42,8 +42,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
               ),
             ),
             ListView(
-              shrinkWrap: true, // Prevents infinite height issue
-              physics: NeverScrollableScrollPhysics(), // Prevents conflict with SingleChildScrollView
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
                 _buildListTile(Icons.person, "Profile", 2),
                 _buildNotificationTile(),
@@ -87,7 +87,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
       ),
       onTap: () {
         setState(() {
-          isNotificationEnabled = !isNotificationEnabled; // Toggle icon state
+          isNotificationEnabled = !isNotificationEnabled;
         });
         widget.onItemSelected(1);
       },
@@ -112,7 +112,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
           confirmText: "Yes",
           cancelText: "No",
           onConfirm: () {
-            Navigator.of(context).pop(); // Close the dialog
+            Navigator.of(context).pop();
             Navigator.pushReplacementNamed(context, Routes.login);
           },
           onCancel: () => Navigator.of(context).pop(),

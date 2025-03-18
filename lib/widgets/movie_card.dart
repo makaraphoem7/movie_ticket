@@ -20,7 +20,7 @@ class MovieCard extends StatelessWidget {
         );
       },
       child: Padding(
-        padding: const EdgeInsets.only(left: 16.0, right: 6.0), // Increased left padding
+        padding: const EdgeInsets.only(left: 16.0, right: 6.0),
         child: Column(
           children: [
             // Movie Poster
@@ -29,17 +29,16 @@ class MovieCard extends StatelessWidget {
                 'https://image.tmdb.org/t/p/w200${movie.posterPath}',
                 width: 110,
                 height: 150,
-                fit: BoxFit.cover, // Ensures image fills the box
+                fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 8), // Spacing between image and text
-            // Movie Title (Optional - Can be removed if not needed)
+            const SizedBox(height: 8),
             SizedBox(
               width: 100,
               child: Text(
                 movie.title,
                 maxLines: 1,
-                overflow: TextOverflow.ellipsis, // Prevents overflow
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 12,

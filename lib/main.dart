@@ -53,7 +53,7 @@ class _MainWrapperState extends State<MainWrapper> {
     HomeScreen(),
     NewMovieScreen(),
     SearchScreen(),
-    // ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override

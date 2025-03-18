@@ -6,6 +6,7 @@ class CustomInputField extends StatefulWidget {
   final String hintText;
   final IconData icon;
   final bool obscureText;
+  final bool readOnly;
   final FormFieldValidator<String> validator;
 
   const CustomInputField({
@@ -14,6 +15,7 @@ class CustomInputField extends StatefulWidget {
     required this.hintText,
     required this.icon,
     this.obscureText = false,
+    this.readOnly = false,
     required this.validator,
   }) : super(key: key);
 
@@ -23,10 +25,9 @@ class CustomInputField extends StatefulWidget {
 
 class _CustomInputFieldState extends State<CustomInputField> with SingleTickerProviderStateMixin {
   bool _isObscured = true;
-  bool _isFocusedOrHasText = false;
-  bool _isError = false;
   late AnimationController _animationController;
   late Animation<double> _labelAnimation;
+  bool _isFocusedOrHasText = false;
 
   @override
   void initState() {
@@ -81,9 +82,7 @@ class _CustomInputFieldState extends State<CustomInputField> with SingleTickerPr
                 child: Text(
                   widget.hintText,
                   style: TextStyle(
-                    color: _isFocusedOrHasText
-                        ? AppConstants.secondaryColor
-                        : Colors.grey[600],
+                    color: _isFocusedOrHasText ? AppConstants.secondaryColor : Colors.grey[600],
                     fontSize: _isFocusedOrHasText ? 12 : 16,
                     fontWeight: FontWeight.w500,
                   ),
@@ -96,17 +95,10 @@ class _CustomInputFieldState extends State<CustomInputField> with SingleTickerPr
           // Input Field
           TextFormField(
             controller: widget.controller,
-            obscureText: _isObscured,
-            style: TextStyle(color: AppConstants.whiteColor, fontSize: 16),
-            validator: (value) {
-              final error = widget.validator(value);
-              if (error != null) {
-                setState(() => _isError = true); // Set error state
-              } else {
-                setState(() => _isError = false); // Remove error state
-              }
-              return error;
-            },
+            obscureText: widget.obscureText ? _isObscured : false,
+            readOnly: widget.readOnly,
+            style: const TextStyle(color: Colors.white, fontSize: 16),
+            validator: widget.validator,
             cursorColor: AppConstants.secondaryColor,
             decoration: InputDecoration(
               prefixIcon: Icon(widget.icon, color: AppConstants.secondaryColor),
@@ -124,20 +116,11 @@ class _CustomInputFieldState extends State<CustomInputField> with SingleTickerPr
                     )
                   : null,
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: _isError ? AppConstants.secondaryColor : Colors.grey[500]!,
-                  width: 1,
-                ),
+                borderSide: BorderSide(color: Colors.grey[500]!, width: 1),
               ),
               focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: _isError
-                      ? AppConstants.secondaryColor
-                      : Colors.grey[500]!, // Focused border color
-                  width: 2,
-                ),
+                borderSide: BorderSide(color: AppConstants.secondaryColor, width: 2),
               ),
-              errorText: _isError ? 'Invalid input' : null,
             ),
           ),
         ],

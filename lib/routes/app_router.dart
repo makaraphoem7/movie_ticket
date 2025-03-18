@@ -31,8 +31,6 @@ class AppRouter {
       case Routes.init:
         return _routeBuilder(const MyApp(), Routes.init);
       case Routes.splash:
-        // -- if any argument for this route -- //
-        // var argument = args == null ? null : args as Map;
         return _routeBuilder(const SplashScreen(), Routes.welcome);
       case Routes.login:
         return _routeBuilder(
@@ -54,11 +52,11 @@ class AppRouter {
           SearchScreen(),
           Routes.searchscreen,
         );
-      // case Routes.profilescreen:
-      //   return _routeBuilder(
-      //     ProfileScreen(),
-      //     Routes.profilescreen,
-      //   );
+      case Routes.profilescreen:
+        return _routeBuilder(
+          ProfileScreen(),
+          Routes.profilescreen,
+        );
       case Routes.aboutUs:
         return _routeBuilder(
           AboutUsScreen(),
