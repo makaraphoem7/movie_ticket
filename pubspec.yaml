@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  image_picker: ^1.0.7
   carousel_slider: ^4.2.1
   flutter:
     sdk: flutter
@@ -38,6 +39,7 @@ dependencies:
   provider: ^6.0.1
   shared_preferences: ^2.2.2
   dropdown_search: ^6.0.2
+  shimmer: ^3.0.0
   # video_player: ^2.8.2
   # intl: ^0.18.1
 

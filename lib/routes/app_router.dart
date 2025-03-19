@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constants/app_constants.dart';
 import '../main.dart';
+import '../constants/app_constants.dart';
+import '../screens/account/about_screen.dart';
 import '../screens/account/profile_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/sign_up_screen.dart';
@@ -30,8 +31,6 @@ class AppRouter {
       case Routes.init:
         return _routeBuilder(const MyApp(), Routes.init);
       case Routes.splash:
-        // -- if any argument for this route -- //
-        // var argument = args == null ? null : args as Map;
         return _routeBuilder(const SplashScreen(), Routes.welcome);
       case Routes.login:
         return _routeBuilder(
@@ -57,6 +56,11 @@ class AppRouter {
         return _routeBuilder(
           ProfileScreen(),
           Routes.profilescreen,
+        );
+      case Routes.aboutUs:
+        return _routeBuilder(
+          AboutUsScreen(),
+          Routes.aboutUs,
         );
       case Routes.detailscreen:
        if (args is Movie) {

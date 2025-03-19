@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/search/search_screen.dart';
+import '../screens/search/search_screen.dart';
+import '../routes/app_routes.dart';
 import '../../constants/app_constants.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -12,36 +13,75 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title,
-        style: TextStyle(color: AppConstants.whiteColor, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          color: AppConstants.whiteColor,
+          fontWeight: FontWeight.bold,
+          fontSize: 20, // Make title more readable
+        ),
       ),
       backgroundColor: AppConstants.blackColor,
-      elevation: 0,
-      
+      elevation: 4, // Adds shadow
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)), // Rounded bottom
+      ),
+
       // Sidebar Menu Icon
-      leading: Builder(
-        builder: (context) => IconButton(
-          icon: Icon(Icons.menu, color: AppConstants.whiteColor),
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-        ),
+      leading: IconButton(
+        icon: Icon(Icons.menu, color: AppConstants.whiteColor, size: 28),
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
       ),
 
       actions: [
-       IconButton(
-          icon: Icon(Icons.search, color: AppConstants.whiteColor),
+        // Search Icon
+        IconButton(
+          icon: Icon(Icons.search, color: AppConstants.whiteColor, size: 28),
           onPressed: () {
-            // Navigate to the SearchScreen
-            // Navigator.pushReplacementNamed(context, Routes.searchscreen);
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const SearchScreen()),
             );
           },
         ),
-        const SizedBox(width: 20),
-        Icon(Icons.notifications_none, color: AppConstants.whiteColor),
-        const SizedBox(width: 10),
+
+        // Notification Icon with Badge
+        Stack(
+          children: [
+            IconButton(
+              icon: Icon(Icons.notifications_none, color: AppConstants.whiteColor, size: 28),
+              onPressed: () {
+                // Handle notification tap
+              },
+            ),
+            Positioned(
+              right: 10,
+              top: 6,
+              child: Container(
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: AppConstants.secondaryColor,
+                  shape: BoxShape.circle,
+                ),
+                constraints: BoxConstraints(
+                  minWidth: 16,
+                  minHeight: 16,
+                ),
+                child: Text(
+                  '3', // Example unread count
+                  style: TextStyle(
+                    color: AppConstants.whiteColor,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        ),
+
+        const SizedBox(width: 10), // Add space
       ],
     );
   }

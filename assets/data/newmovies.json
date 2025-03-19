@@ -1,0 +1,167 @@
+[
+    {
+      "id": 1,
+      "title": "Concrete Utopia",
+      "overview": "Survivors of a massive earthquake struggle to maintain order in a collapsing society.",
+      "posterPath": "assets/images/concrete_utopia.png",
+      "voteAverage": 7.8,
+      "releaseDate": "2023-08-09",
+      "movieType": "Thriller",
+      "timerofmovie": "2h 10m",
+      "megabyteofmovie": "2.5GB"
+    },
+    {
+      "id": 2,
+      "title": "Exhuma",
+      "overview": "A team of paranormal experts investigates a cursed tomb, unleashing dark forces.",
+      "posterPath": "assets/images/exhuma.png",
+      "voteAverage": 7.5,
+      "releaseDate": "2024-02-22",
+      "movieType": "Horror",
+      "timerofmovie": "2h 3m",
+      "megabyteofmovie": "2.2GB"
+    },
+    {
+      "id": 3,
+      "title": "Moon Man",
+      "overview": "A man is left stranded on the moon after an evacuation goes wrong.",
+      "posterPath": "assets/images/moon_man.png",
+      "voteAverage": 7.3,
+      "releaseDate": "2022-07-29",
+      "movieType": "Sci-Fi",
+      "timerofmovie": "2h 2m",
+      "megabyteofmovie": "2.4GB"
+    },
+    {
+      "id": 4,
+      "title": "Hidden Blade",
+      "overview": "During World War II, a secret agent works undercover in Japanese-occupied China.",
+      "posterPath": "assets/images/hidden_blade.png",
+      "voteAverage": 7.0,
+      "releaseDate": "2023-01-22",
+      "movieType": "Action",
+      "timerofmovie": "2h 8m",
+      "megabyteofmovie": "2.1GB"
+    },
+    {
+      "id": 5,
+      "title": "12.12: The Day",
+      "overview": "A gripping drama about Korea’s 1979 military coup and the fight for democracy.",
+      "posterPath": "assets/images/1212_the_day.png",
+      "voteAverage": 8.1,
+      "releaseDate": "2023-11-22",
+      "movieType": "Historical",
+      "timerofmovie": "2h 19m",
+      "megabyteofmovie": "2.6GB"
+    },
+    {
+      "id": 6,
+      "title": "No More Bets",
+      "overview": "A hacker and a model are tricked into a human trafficking scam and must fight for survival.",
+      "posterPath": "assets/images/no_more_bets.png",
+      "voteAverage": 7.9,
+      "releaseDate": "2023-08-08",
+      "movieType": "Crime",
+      "timerofmovie": "2h 10m",
+      "megabyteofmovie": "2.3GB"
+    },
+    {
+      "id": 7,
+      "title": "The Point Men",
+      "overview": "A South Korean diplomat and a special agent risk everything to rescue hostages in Afghanistan.",
+      "posterPath": "assets/images/point_men.png",
+      "voteAverage": 7.2,
+      "releaseDate": "2023-01-18",
+      "movieType": "Drama",
+      "timerofmovie": "1h 50m",
+      "megabyteofmovie": "2.0GB"
+    },
+    {
+      "id": 8,
+      "title": "Creation of the Gods I: Kingdom of Storms",
+      "overview": "An epic war between mortals and immortals, shaping the destiny of China.",
+      "posterPath": "assets/images/creation_gods.png",
+      "voteAverage": 8.0,
+      "releaseDate": "2023-07-20",
+      "movieType": "Historical Fantasy",
+      "timerofmovie": "2h 28m",
+      "megabyteofmovie": "2.8GB"
+    },
+    {
+      "id": 9,
+      "title": "The Battle at Lake Changjin",
+      "overview": "Chinese soldiers fight in extreme conditions during the Korean War.",
+      "posterPath": "assets/images/battle_changjin.png",
+      "voteAverage": 7.6,
+      "releaseDate": "2021-09-30",
+      "movieType": "War",
+      "timerofmovie": "2h 56m",
+      "megabyteofmovie": "3.0GB"
+    },
+    {
+      "id": 10,
+      "title": "The Wandering Earth II",
+      "overview": "Prequel to The Wandering Earth, showing the efforts to move Earth out of the Solar System.",
+      "posterPath": "assets/images/wandering_earth2.png",
+      "voteAverage": 7.9,
+      "releaseDate": "2023-01-22",
+      "movieType": "Sci-Fi",
+      "timerofmovie": "2h 53m",
+      "megabyteofmovie": "2.9GB"
+    },
+    {
+      "id": 11,
+      "title": "The Yin-Yang Master",
+      "overview": "A battle between humans and demons, based on classic Chinese folklore.",
+      "posterPath": "assets/images/yin_yang_master.png",
+      "voteAverage": 7.2,
+      "releaseDate": "2021-02-12",
+      "movieType": "Fantasy",
+      "timerofmovie": "1h 53m",
+      "megabyteofmovie": "2.2GB"
+    },
+    {
+      "id": 12,
+      "title": "White Snake",
+      "overview": "A romantic fantasy inspired by the legend of the White Snake.",
+      "posterPath": "assets/images/white_snake.png",
+      "voteAverage": 7.5,
+      "releaseDate": "2019-01-11",
+      "movieType": "Fantasy",
+      "timerofmovie": "1h 55m",
+      "megabyteofmovie": "2.1GB"
+    },
+    {
+      "id": 13,
+      "title": "The Great Wall",
+      "overview": "Ancient warriors defend China against mythical monsters.",
+      "posterPath": "assets/images/great_wall.png",
+      "voteAverage": 6.8,
+      "releaseDate": "2016-12-16",
+      "movieType": "Action Fantasy",
+      "timerofmovie": "1h 43m",
+      "megabyteofmovie": "2.0GB"
+    },
+    {
+      "id": 14,
+      "title": "Dynasty Warriors",
+      "overview": "An adaptation of the legendary Three Kingdoms battles.",
+      "posterPath": "assets/images/dynasty_warriors.png",
+      "voteAverage": 6.5,
+      "releaseDate": "2021-04-29",
+      "movieType": "Action",
+      "timerofmovie": "2h",
+      "megabyteofmovie": "2.2GB"
+    },
+    {
+      "id": 15,
+      "title": "Once Upon a Time in China",
+      "overview": "A martial arts master defends China against foreign invaders.",
+      "posterPath": "assets/images/once_upon_china.png",
+      "voteAverage": 8.0,
+      "releaseDate": "1991-08-15",
+      "movieType": "Martial Arts",
+      "timerofmovie": "2h 14m",
+      "megabyteofmovie": "2.3GB"
+    }
+]

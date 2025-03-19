@@ -1,0 +1,168 @@
+[
+    {
+      "id": 1,
+      "title": "Anora",
+      "overview": "A gripping thriller that has captivated audiences nationwide.",
+      "posterPath": "assets/images/anora.png",
+      "voteAverage": 7.6,
+      "releaseDate": "2025-04-15",
+      "movieType": "Thriller",
+      "duration": "2h 12m",
+      "fileSize": "2.4GB"
+    },
+    {
+      "id": 2,
+      "title": "Wicked",
+      "overview": "A modern retelling of the classic tale, blending fantasy and drama.",
+      "posterPath": "assets/images/wicked.png",
+      "voteAverage": 7.9,
+      "releaseDate": "2025-06-27",
+      "movieType": "Fantasy, Drama",
+      "duration": "2h 30m",
+      "fileSize": "2.8GB"
+    },
+    {
+      "id": 3,
+      "title": "Den of Thieves 2: Pantera",
+      "overview": "The sequel to the heist thriller, offering intense action sequences.",
+      "posterPath": "assets/images/den_of_thieves2.png",
+      "voteAverage": 7.5,
+      "releaseDate": "2025-05-10",
+      "movieType": "Action, Crime",
+      "duration": "2h 15m",
+      "fileSize": "2.6GB"
+    },
+    {
+        "id": 4,
+        "title": "Eclipse of Fate",
+        "overview": "A legendary warrior must reclaim a stolen artifact before an ancient prophecy is fulfilled.",
+        "posterPath": "assets/images/eclipse_of_fate.png",
+        "voteAverage": 8.2,
+        "releaseDate": "2025-06-15",
+        "movieType": "Fantasy, Adventure",
+        "duration": "2h 12m",
+        "fileSize": "2.7GB"
+    },
+    {
+      "id": 5,
+      "title": "A Complete Unknown",
+      "overview": "A mysterious narrative that keeps viewers on the edge of their seats.",
+      "posterPath": "assets/images/a_complete_unknown.png",
+      "voteAverage": 7.4,
+      "releaseDate": "2025-07-05",
+      "movieType": "Mystery, Drama",
+      "duration": "2h 20m",
+      "fileSize": "2.7GB"
+    },
+    {
+      "id": 6,
+      "title": "One of Them Days",
+      "overview": "A comedy-drama reflecting on everyday life's unpredictability.",
+      "posterPath": "assets/images/one_of_them_days.png",
+      "voteAverage": 7.3,
+      "releaseDate": "2025-06-18",
+      "movieType": "Comedy, Drama",
+      "duration": "1h 55m",
+      "fileSize": "2.3GB"
+    },
+    {
+        "id": 7,
+        "title": "Disney's Snow White",
+        "overview": "A live-action adaptation of the classic fairy tale, following Snow White as she embarks on a journey of self-discovery and bravery.",
+        "posterPath": "assets/images/snow_white.png",
+        "voteAverage": 7.9,
+        "releaseDate": "2025-03-21",
+        "movieType": "Fantasy, Musical",
+        "duration": "2h 5m",
+        "fileSize": "2.6GB"
+    },
+    {
+      "id": 8,
+      "title": "Dog Man",
+      "overview": "An animated feature that's fun for the whole family.",
+      "posterPath": "assets/images/dog_man.png",
+      "voteAverage": 7.7,
+      "releaseDate": "2025-07-10",
+      "movieType": "Animation, Family",
+      "duration": "1h 40m",
+      "fileSize": "2.1GB"
+    },
+    {
+      "id": 9,
+      "title": "Conclave",
+      "overview": "A political thriller delving into the intricacies of power.",
+      "posterPath": "assets/images/conclave.png",
+      "voteAverage": 7.6,
+      "releaseDate": "2025-06-02",
+      "movieType": "Political Thriller",
+      "duration": "2h 18m",
+      "fileSize": "2.5GB"
+    },
+    {
+      "id": 10,
+      "title": "Mufasa: The Lion King",
+      "overview": "A prequel to the beloved classic, exploring Mufasa's origins.",
+      "posterPath": "assets/images/mufasa_lion_king.png",
+      "voteAverage": 8.0,
+      "releaseDate": "2025-07-20",
+      "movieType": "Animation, Adventure",
+      "duration": "2h 5m",
+      "fileSize": "2.6GB"
+    },
+    {
+      "id": 11,
+      "title": "The Watchers",
+      "overview": "A psychological thriller where characters are being watched by unknown forces.",
+      "posterPath": "assets/images/the_watchers.png",
+      "voteAverage": 7.9,
+      "releaseDate": "2025-06-15",
+      "movieType": "Thriller, Horror",
+      "duration": "2h 7m",
+      "fileSize": "2.4GB"
+    },
+    {
+      "id": 12,
+      "title": "Inside Out 2",
+      "overview": "A sequel to the beloved animated movie, exploring new emotions.",
+      "posterPath": "assets/images/inside_out_2.png",
+      "voteAverage": 8.2,
+      "releaseDate": "2025-06-14",
+      "movieType": "Animation, Family",
+      "duration": "1h 45m",
+      "fileSize": "2.2GB"
+    },
+    {
+      "id": 13,
+      "title": "Deadpool & Wolverine",
+      "overview": "The highly anticipated superhero action movie featuring Deadpool and Wolverine.",
+      "posterPath": "assets/images/deadpool_wolverine.png",
+      "voteAverage": 8.5,
+      "releaseDate": "2025-07-26",
+      "movieType": "Action, Comedy",
+      "duration": "2h 12m",
+      "fileSize": "2.8GB"
+    },
+    {
+      "id": 14,
+      "title": "Kingdom of the Planet of the Apes",
+      "overview": "A sci-fi adventure exploring a new era of the Planet of the Apes franchise.",
+      "posterPath": "assets/images/kingdom_planet_apes.png",
+      "voteAverage": 8.0,
+      "releaseDate": "2025-07-05",
+      "movieType": "Sci-Fi, Action",
+      "duration": "2h 30m",
+      "fileSize": "3.0GB"
+    },
+    {
+      "id": 15,
+      "title": "Godzilla x Kong: The New Empire",
+      "overview": "The legendary battle continues between the Titans, Godzilla and King Kong.",
+      "posterPath": "assets/images/godzilla_kong.png",
+      "voteAverage": 8.1,
+      "releaseDate": "2025-06-28",
+      "movieType": "Action, Sci-Fi",
+      "duration": "2h 15m",
+      "fileSize": "2.9GB"
+    }
+  ]
+  

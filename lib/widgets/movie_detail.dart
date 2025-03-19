@@ -17,11 +17,13 @@ class MovieDetail extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Image.network(
-                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+              Container(
                 width: double.infinity,
                 height: 300,
-                fit: BoxFit.cover,
+                child: Image.asset(
+                  movie.posterPath, // Replace with your local asset path
+                  fit: BoxFit.cover,
+                ),
               ),
               Positioned(
                 top: 40,
@@ -125,8 +127,8 @@ class MovieDetail extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
-                        child: Image.network(
-                          'https://image.tmdb.org/t/p/w500${movie.posterPath}', // Replace with your image
+                        child: Image.asset(
+                          movie.posterPath, // Replace with your local asset path
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
