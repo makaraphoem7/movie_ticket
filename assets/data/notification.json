@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "message": "New movie available: The Batman!",
+      "date": "2024-03-17"
+    },
+    {
+      "id": 2,
+      "message": "Your subscription will expire in 3 days. Renew now!",
+      "date": "2024-03-16"
+    },
+    {
+      "id": 3,
+      "message": "Enjoy unlimited movies with our premium plan!",
+      "date": "2024-03-15"
+    }
+  ]
+  

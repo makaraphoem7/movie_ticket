@@ -35,20 +35,29 @@ class _DownloadScreenState extends State<DownloadScreen>
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10), // Spacing below title
-          // TabBar
+
+          // TabBar inside a styled container
           Container(
-            color: Colors.black,
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: TabBar(
               controller: _tabController,
               labelColor: Colors.red,
               unselectedLabelColor: Colors.white70,
-              indicatorColor: Colors.red,
+              indicator: UnderlineTabIndicator(
+                borderSide: const BorderSide(width: 2.0, color: Colors.red),
+                insets: EdgeInsets.symmetric(horizontal: 130), // Adjust for centering
+              ),
               tabs: const [
                 Tab(text: "Downloaded"),
                 Tab(text: "Downloading"),
               ],
             ),
           ),
+          
           // TabBarView Content
           Expanded(
             child: TabBarView(

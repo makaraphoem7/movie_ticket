@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../constants/app_constants.dart';
 import '../../widgets/custom_input_field.dart';
+import '../../widgets/custom_app_bar.dart'; // Import the reusable AppBar
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -15,7 +16,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final TextEditingController _passwordController = TextEditingController(text: "123456");
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  bool _isEditing = false; // To track if user is in edit mode
+  bool _isEditing = false;
 
   @override
   void dispose() {
@@ -34,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void _saveProfile() {
     if (_formKey.currentState!.validate()) {
       setState(() {
-        _isEditing = false; // Disable edit mode after saving
+        _isEditing = false;
       });
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -47,13 +48,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: const Text('Profile'),
-        elevation: 0, // Removes the app bar shadow for a cleaner look
-        backgroundColor: AppConstants.blackColor, // Sets a lighter background
+        elevation: 0,
+        automaticallyImplyLeading: false, // Remove default leading spacing
+        title: const CustomAppBar(title: "Profile"), // Use CustomAppBar
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -63,14 +60,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Profile Icon & Name
+                // Profile Picture and Name
                 Center(
                   child: Column(
                     children: [
                       Stack(
                         children: [
                           CircleAvatar(
-                            radius: 50, // Increase avatar size
+                            radius: 50,
                             backgroundColor: AppConstants.secondaryColor,
                             child: const Icon(Icons.person, size: 50, color: Colors.white),
                           ),
@@ -78,7 +75,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             bottom: 0,
                             right: 0,
                             child: GestureDetector(
-                              onTap: _toggleEditMode, // Toggle edit mode on tap
+                              onTap: _toggleEditMode,
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -91,7 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     ),
                                   ],
                                 ),
-                                padding: EdgeInsets.all(6),
+                                padding: const EdgeInsets.all(6),
                                 child: Icon(Icons.edit, size: 22, color: AppConstants.secondaryColor),
                               ),
                             ),
@@ -112,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 const SizedBox(height: 32),
 
-                // Full Name Field
+                // Form Fields
                 CustomInputField(
                   controller: _nameController,
                   hintText: 'Full Name',
@@ -122,7 +119,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 const SizedBox(height: 16),
 
-                // Email Field
                 CustomInputField(
                   controller: _emailController,
                   hintText: 'Email',
@@ -139,7 +135,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 const SizedBox(height: 16),
 
-                // Password Field
                 CustomInputField(
                   controller: _passwordController,
                   hintText: 'Password',
@@ -160,7 +155,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       backgroundColor: AppConstants.secondaryColor,
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8), // Rounded corners
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                     child: Text(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/models/movie.dart';
 import '../../constants/app_constants.dart';
 import '../../widgets/movie_card.dart';
-import '../../widgets/custom_app_bar.dart';
+import '../../widgets/custom_nav_bar.dart';
 import '../../widgets/drawer_menu.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
@@ -97,7 +97,7 @@ class _NewMovieScreenState extends State<NewMovieScreen> {
           debugPrint('Selected index: $index');
         },
       ),
-      appBar: const CustomAppBar(title: "New Movies"),
+      appBar: const CustomNavBar(title: "New Movies"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
         child: displayedMovies.isEmpty

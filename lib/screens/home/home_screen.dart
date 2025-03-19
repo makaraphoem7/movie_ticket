@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_application_1/widgets/custom_app_bar.dart';
+import 'package:flutter_application_1/widgets/custom_nav_bar.dart';
 import '../../widgets/movie_all.dart';
 import '../../widgets/movie_card.dart';
 import '../../constants/app_constants.dart';
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
           debugPrint('Selected index: $index');
         },
       ),
-      appBar: const CustomAppBar(title: "Movie App"),
+      appBar: const CustomNavBar(title: "Movie App"),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(

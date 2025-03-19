@@ -1,103 +1,52 @@
 import 'package:flutter/material.dart';
 import '../../constants/app_constants.dart';
+import '../../widgets/custom_app_bar.dart'; // Import the reusable AppBar
 
 class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConstants.blackColor, // Background color matching your theme
+      backgroundColor: AppConstants.blackColor,
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 40), // Adjust top spacing
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: AppConstants.greyColor, // Use AppConstants.primaryColor if defined
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: AppConstants.whiteColor), // Use AppConstants.whiteColor if defined
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 10), // Spacing between icon and text
-                  Text(
-                    "About Us",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: AppConstants.whiteColor,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20), // Space after title
-              Text(
-                "Welcome to MovieTime!",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: AppConstants.whiteColor,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
+              CustomAppBar(title: "About Us"), // Call the reusable AppBar
+              const SizedBox(height: 20),
+              _buildSectionTitle("Welcome to MovieTime!"),
+              const SizedBox(height: 10),
+              _buildDescription(
                 "MovieTime is your ultimate destination for discovering and watching your favorite movies. "
                 "With a vast collection of the latest blockbusters, classic films, and trending shows, "
                 "we bring entertainment right to your fingertips.",
-                style: TextStyle(fontSize: 16, color: AppConstants.whiteColor),
               ),
-              SizedBox(height: 20),
-              Text(
-                "Our Features:",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppConstants.whiteColor,
-                ),
-              ),
-              SizedBox(height: 10),
-              _buildFeatureItem("🎥 Watch Movies Anytime, Anywhere"),
-              _buildFeatureItem("⭐ Get Personalized Recommendations"),
-              _buildFeatureItem("📅 Stay Updated with Upcoming Releases"),
-              _buildFeatureItem("💬 User Reviews & Ratings"),
-              _buildFeatureItem("🎬 HD Streaming with No Ads"),
-              _buildFeatureItem("🔎 Advanced Search & Filtering"),
-              SizedBox(height: 20),
-              Text(
-                "Why Choose Us?",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppConstants.whiteColor,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 20),
+              _buildSectionTitle("Our Features:"),
+              const SizedBox(height: 10),
+              _buildFeatureItem(Icons.movie, "Watch Movies Anytime, Anywhere"),
+              _buildFeatureItem(Icons.star, "Get Personalized Recommendations"),
+              _buildFeatureItem(Icons.calendar_today, "Stay Updated with Upcoming Releases"),
+              _buildFeatureItem(Icons.rate_review, "User Reviews & Ratings"),
+              _buildFeatureItem(Icons.hd, "HD Streaming with No Ads"),
+              _buildFeatureItem(Icons.search, "Advanced Search & Filtering"),
+              const SizedBox(height: 20),
+              _buildSectionTitle("Why Choose Us?"),
+              const SizedBox(height: 10),
+              _buildDescription(
                 "At MovieTime, we are committed to providing the best streaming experience with high-quality content, "
                 "user-friendly navigation, and exclusive movie collections.",
-                style: TextStyle(fontSize: 16, color: AppConstants.whiteColor),
               ),
-              SizedBox(height: 20),
-              Text(
-                "Contact Us:",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppConstants.whiteColor,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 20),
+              _buildSectionTitle("Contact Us:"),
+              const SizedBox(height: 10),
+              _buildDescription(
                 "📧 Email: support@movietime.com\n"
                 "📍 Address: 123 Movie Street, Hollywood, CA\n"
                 "📱 Phone: +1 234 567 890",
-                style: TextStyle(fontSize: 16, color: AppConstants.whiteColor),
               ),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -105,13 +54,31 @@ class AboutUsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFeatureItem(String text) {
+  Widget _buildSectionTitle(String title) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: AppConstants.whiteColor,
+      ),
+    );
+  }
+
+  Widget _buildDescription(String text) {
+    return Text(
+      text,
+      style: TextStyle(fontSize: 16, color: AppConstants.whiteColor),
+    );
+  }
+
+  Widget _buildFeatureItem(IconData icon, String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: Row(
         children: [
-          Icon(Icons.check_circle, color: AppConstants.greenColor),
-          SizedBox(width: 10),
+          Icon(icon, color: AppConstants.greenColor),
+          const SizedBox(width: 10),
           Expanded(
             child: Text(
               text,
