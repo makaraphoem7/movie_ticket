@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/download/download_screen.dart';
 import '../constants/app_constants.dart';
 import '../routes/app_router.dart';
 import '../screens/new_movie/new_movie_screen.dart';
@@ -53,6 +54,7 @@ class _MainWrapperState extends State<MainWrapper> {
     HomeScreen(),
     NewMovieScreen(),
     SearchScreen(),
+    DownloadScreen(),
     ProfileScreen(),
   ];
 

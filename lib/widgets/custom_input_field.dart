@@ -9,13 +9,13 @@ class CustomInputField extends StatefulWidget {
   final FormFieldValidator<String> validator;
 
   const CustomInputField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hintText,
     required this.icon,
     this.obscureText = false,
     required this.validator,
-  }) : super(key: key);
+  });
 
   @override
   _CustomInputFieldState createState() => _CustomInputFieldState();

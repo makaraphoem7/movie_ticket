@@ -69,6 +69,7 @@ class AppRouter {
       default:
         return _errorRoute();
     }
+    return null;
   }
 
   static _routeBuilder(Widget page, String routeName, {Object? args}) {

@@ -6,6 +6,8 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/drawer_menu.dart';
 
 class NewMovieScreen extends StatelessWidget {
+  const NewMovieScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final movies = MockMovies.getMovies(); // Load static movie list

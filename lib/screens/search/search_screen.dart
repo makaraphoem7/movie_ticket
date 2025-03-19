@@ -121,7 +121,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         itemBuilder: (context, index) {
                           final movie = searchResults[index];
                           return ListTile(
-                            leading: movie.posterPath != null && movie.posterPath!.isNotEmpty
+                            leading: movie.posterPath.isNotEmpty
                                 ? Image.network(
                                     'https://image.tmdb.org/t/p/w200${movie.posterPath}',
                                     width: 50,

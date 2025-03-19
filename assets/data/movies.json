@@ -1,0 +1,24 @@
+[
+    {
+      "image": "assets/images/sonic3.jpg",
+      "title": "Sonic 3",
+      "genre": "Action, Adventure",
+      "duration": "2:50:52",
+      "size": "5GB"
+    },
+    {
+      "image": "assets/images/dominion.jpg",
+      "title": "Dominion",
+      "genre": "Action, Adventure",
+      "duration": "2:50:52",
+      "size": "5GB"
+    },
+    {
+      "image": "assets/images/captainmarvel.jpg",
+      "title": "Captain Marvel",
+      "genre": "Action, Adventure",
+      "duration": "2:50:52",
+      "size": "5GB"
+    }
+  ]
+  

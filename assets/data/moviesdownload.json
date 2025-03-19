@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Avatar: The Way of Water",
+    "genre": "Action, Sci-Fi",
+    "duration": "3:12:45",
+    "size": "7GB",
+    "progress": 70,
+    "image": "assets/images/Avatar.jpg"
+  },
+  {
+    "title": "Black Panther: Wakanda Forever",
+    "genre": "Action, Drama",
+    "duration": "2:41:00",
+    "size": "6GB",
+    "progress": 50,
+    "image": "assets/images/BlackPanther.jpg"
+  },
+  {
+    "title": "John Wick 4",
+    "genre": "Action, Thriller",
+    "duration": "2:49:00",
+    "size": "5GB",
+    "progress": 30,
+    "image": "assets/images/JohnWick4.jpg"
+  }
+]
