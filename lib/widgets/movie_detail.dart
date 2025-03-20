@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../constants/app_constants.dart';
 import '../data/models/movie.dart';
+import '../routes/app_router.dart';
+import '../routes/app_routes.dart';
+import '../screens/payments/subscription_screen.dart';
 
 class MovieDetail extends StatelessWidget {
   const MovieDetail({
@@ -29,7 +32,8 @@ class MovieDetail extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: AppConstants.primaryColor,
                   child: IconButton(
-                    icon: Icon(Icons.arrow_back, color: AppConstants.whiteColor),
+                    icon:
+                        Icon(Icons.arrow_back, color: AppConstants.whiteColor),
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -42,15 +46,18 @@ class MovieDetail extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: AppConstants.primaryColor,
                   child: IconButton(
-                    icon: Icon(Icons.play_arrow_outlined, color: AppConstants.whiteColor),
-                    onPressed: () {},
+                    icon: Icon(Icons.play_arrow_outlined,
+                        color: AppConstants.whiteColor),
+                    onPressed: () {
+                      AppRouter.pushNamed(Routes.subscriptionScreen);
+                    },
                   ),
                 ),
               )
             ],
           ),
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -62,49 +69,59 @@ class MovieDetail extends StatelessWidget {
                     color: AppConstants.whiteColor,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   movie.overview,
                   style: TextStyle(color: AppConstants.greyColor),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppConstants.secondaryColor,
-                    minimumSize: Size(double.infinity, 50),
+                    minimumSize: const Size(double.infinity, 50),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    AppRouter.pushNamed(Routes.subscriptionScreen);
+                    // _navigateToSubscription(context);
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.play_arrow_outlined, color: AppConstants.whiteColor),
-                      SizedBox(width: 8),
-                      Text('Play Now', style: TextStyle(color: AppConstants.whiteColor)),
+                      Icon(Icons.play_arrow_outlined,
+                          color: AppConstants.whiteColor),
+                      const SizedBox(width: 8),
+                      Text('Play Now',
+                          style: TextStyle(color: AppConstants.whiteColor)),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: AppConstants.whiteColor),
-                    minimumSize: Size(double.infinity, 50),
+                    minimumSize: const Size(double.infinity, 50),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    AppRouter.pushNamed(Routes.subscriptionScreen);
+                    // _navigateToSubscription(context);
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.download_outlined, color: AppConstants.whiteColor),
-                      SizedBox(width: 8),
-                      Text('Download', style: TextStyle(color: AppConstants.whiteColor)),
+                      Icon(Icons.download_outlined,
+                          color: AppConstants.whiteColor),
+                      const SizedBox(width: 8),
+                      Text('Download',
+                          style: TextStyle(color: AppConstants.whiteColor)),
                     ],
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(
                   movie.overview,
                   style: TextStyle(color: AppConstants.greyColor),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(
                   'Episode',
                   style: TextStyle(
@@ -114,9 +131,9 @@ class MovieDetail extends StatelessWidget {
                   ),
                 ),
                 Divider(color: AppConstants.whiteColor),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: AppConstants.greyColor,
                     borderRadius: BorderRadius.circular(10),
@@ -126,13 +143,13 @@ class MovieDetail extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.network(
-                          'https://image.tmdb.org/t/p/w500${movie.posterPath}', // Replace with your image
+                          'https://image.tmdb.org/t/p/w500${movie.posterPath}',
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,16 +164,17 @@ class MovieDetail extends StatelessWidget {
                             ),
                             Text(
                               '${movie.movieType} | ${movie.movieType}',
-                              style: TextStyle(color: AppConstants.greyColor),
+                              style: TextStyle(color: AppConstants.whiteColor),
                             ),
                             Text(
                               '${movie.timerofmovie} | ${movie.megabyteofmovie}',
-                              style: TextStyle(color: AppConstants.greyColor),
+                              style: TextStyle(color: AppConstants.whiteColor),
                             ),
                           ],
                         ),
                       ),
-                      Icon(Icons.download_outlined, color: AppConstants.whiteColor),
+                      Icon(Icons.download_outlined,
+                          color: AppConstants.whiteColor),
                     ],
                   ),
                 ),
@@ -167,4 +185,11 @@ class MovieDetail extends StatelessWidget {
       ),
     );
   }
+
+  // void _navigateToSubscription(BuildContext context) {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => const SubscriptionScreen()),
+  //   );
+  // }
 }

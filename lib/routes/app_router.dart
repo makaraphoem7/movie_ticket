@@ -7,6 +7,8 @@ import '../screens/auth/sign_up_screen.dart';
 import '../screens/boarding/open_app.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/detail/movie_detail_screen.dart';
+import '../screens/payments/payment_screen.dart';
+import '../screens/payments/subscription_screen.dart';
 import '../screens/search/search_screen.dart';
 import '../data/models/movie.dart';
 
@@ -17,7 +19,8 @@ class AppRouter {
   const AppRouter._();
 
   /// The global key used to access navigator without context
-  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 
   static const String initialRoute = Routes.init;
 
@@ -58,13 +61,24 @@ class AppRouter {
           ProfileScreen(),
           Routes.profilescreen,
         );
-      case Routes.detailscreen:
-       if (args is Movie) {
+      case Routes.subscriptionScreen:
         return _routeBuilder(
-          MovieDetailScreen(movie: args),
-          Routes.detailscreen,
+          SubscriptionScreen(),
+          Routes.subscriptionScreen,
         );
-  }
+        case Routes.paymentscreen:
+        return _routeBuilder(
+          PaymentScreen(),
+          Routes.paymentscreen,
+        );
+        
+      case Routes.detailscreen:
+        if (args is Movie) {
+          return _routeBuilder(
+            MovieDetailScreen(movie: args),
+            Routes.detailscreen,
+          );
+        }
 
       default:
         return _errorRoute();
@@ -74,10 +88,9 @@ class AppRouter {
 
   static _routeBuilder(Widget page, String routeName, {Object? args}) {
     return MaterialPageRoute<dynamic>(
-      builder: (_) => page,
-      settings: RouteSettings(name: routeName, arguments: args),
-      fullscreenDialog: false
-    );
+        builder: (_) => page,
+        settings: RouteSettings(name: routeName, arguments: args),
+        fullscreenDialog: false);
   }
 
   /// This method returns an error page to indicate redirection to an
@@ -127,6 +140,8 @@ class AppRouter {
   }
 
   static void pushNamedAndRemoveUntil(String routeName, {dynamic args}) {
-    navigatorKey.currentState?.pushNamedAndRemoveUntil(routeName, (Route<dynamic> route) => false, arguments: args);
+    navigatorKey.currentState?.pushNamedAndRemoveUntil(
+        routeName, (Route<dynamic> route) => false,
+        arguments: args);
   }
 }

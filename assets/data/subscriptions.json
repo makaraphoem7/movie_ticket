@@ -1,0 +1,21 @@
+[
+    {
+      "title": "Weekly",
+      "description": "Including tax and auto-renew",
+      "price": 1.25,
+      "duration": "/Week"
+    },
+    {
+      "title": "Monthly",
+      "description": "Including tax and auto-renew",
+      "price": 3.00,
+      "duration": "/Month"
+    },
+    {
+      "title": "Annual",
+      "description": "Including tax and auto-renew",
+      "price": 20.00,
+      "duration": "/Year"
+    }
+  ]
+  
