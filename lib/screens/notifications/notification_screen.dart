@@ -12,12 +12,13 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppConstants.blackColor, // Black background
-      appBar: AppBar(
-        backgroundColor: AppConstants.blackColor,
-        elevation: 0,
-        automaticallyImplyLeading: false, // Remove default leading spacing
-        title: const CustomAppBar(title: "Notifications"), // Use CustomAppBar
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: AppConstants.blackColor,
+      //   elevation: 0,
+      //   automaticallyImplyLeading: false, // Remove default leading spacing
+      //   title: const CustomAppBar(title: "Notifications"), // Use CustomAppBar
+      // ),
+      appBar: CustomAppBar(title: "Notifications"),
       body: notifications.isEmpty
           ? const Center(
               child: Text(

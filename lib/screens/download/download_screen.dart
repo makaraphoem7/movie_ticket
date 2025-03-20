@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/downloading.dart';
-import '../../widgets/downloaded.dart';
+import '../../screens/download/widgets/downloading.dart';
+import 'widgets/downloaded.dart';
 
 class DownloadScreen extends StatefulWidget {
   @override

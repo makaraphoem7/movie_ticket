@@ -21,12 +21,12 @@ class MovieDetail extends StatelessWidget {
                 width: double.infinity,
                 height: 300,
                 child: Image.asset(
-                  movie.posterPath, // Replace with your local asset path
+                  movie.posterPath, // Ensure path is correct
                   fit: BoxFit.cover,
                 ),
               ),
               Positioned(
-                top: 40,
+                top: 14,
                 left: 16,
                 child: CircleAvatar(
                   backgroundColor: AppConstants.primaryColor,
@@ -103,11 +103,6 @@ class MovieDetail extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Text(
-                  movie.overview,
-                  style: TextStyle(color: AppConstants.greyColor),
-                ),
-                SizedBox(height: 16),
-                Text(
                   'Episode',
                   style: TextStyle(
                     fontSize: 18,
@@ -120,7 +115,7 @@ class MovieDetail extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: AppConstants.greyColor,
+                    color: Colors.grey[900],
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
@@ -128,7 +123,7 @@ class MovieDetail extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          movie.posterPath, // Replace with your local asset path
+                          movie.posterPath, // Ensure correct asset path
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
@@ -148,7 +143,7 @@ class MovieDetail extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '${movie.movieType} | ${movie.movieType}',
+                              '${movie.movieType ?? "Unknown"}', // Fix for missing movieType
                               style: TextStyle(color: AppConstants.greyColor),
                             ),
                             Text(

@@ -1,6 +1,17 @@
 [
     {
       "id": 1,
+      "title": "Love in the Clouds - Episode 25",
+      "overview": "As their love deepens, unexpected challenges arise, testing their commitment under the dreamy sky.",
+      "posterPath": "assets/images/love_in_the_clouds_ep25.png",
+      "voteAverage": 8.2,
+      "releaseDate": "2024-03-15",
+      "movieType": "Romance, Drama",
+      "timerofmovie": "1h 5m",
+      "megabyteofmovie": "1.8GB"
+    },
+    {
+      "id": 2,
       "title": "Anora",
       "overview": "A gripping thriller that has captivated audiences nationwide.",
       "posterPath": "assets/images/anora.png",
@@ -11,7 +22,18 @@
       "fileSize": "2.4GB"
     },
     {
-      "id": 2,
+      "id": 3,
+      "title": "The Glory",
+      "overview": "A woman who suffered severe school bullying sets out to take revenge on her tormentors years later.",
+      "posterPath": "assets/images/the_glory.png",
+      "voteAverage": 8.9,
+      "releaseDate": "2022-12-30",
+      "movieType": "Thriller, Drama, Revenge",
+      "timerofmovie": "16 Episodes",
+      "megabyteofmovie": "Varies"
+    },
+    {
+      "id": 4,
       "title": "Wicked",
       "overview": "A modern retelling of the classic tale, blending fantasy and drama.",
       "posterPath": "assets/images/wicked.png",
@@ -22,7 +44,7 @@
       "fileSize": "2.8GB"
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "Den of Thieves 2: Pantera",
       "overview": "The sequel to the heist thriller, offering intense action sequences.",
       "posterPath": "assets/images/den_of_thieves2.png",
@@ -33,7 +55,7 @@
       "fileSize": "2.6GB"
     },
     {
-        "id": 4,
+        "id": 6,
         "title": "Eclipse of Fate",
         "overview": "A legendary warrior must reclaim a stolen artifact before an ancient prophecy is fulfilled.",
         "posterPath": "assets/images/eclipse_of_fate.png",
@@ -44,7 +66,7 @@
         "fileSize": "2.7GB"
     },
     {
-      "id": 5,
+      "id": 7,
       "title": "A Complete Unknown",
       "overview": "A mysterious narrative that keeps viewers on the edge of their seats.",
       "posterPath": "assets/images/a_complete_unknown.png",
@@ -55,7 +77,7 @@
       "fileSize": "2.7GB"
     },
     {
-      "id": 6,
+      "id": 8,
       "title": "One of Them Days",
       "overview": "A comedy-drama reflecting on everyday life's unpredictability.",
       "posterPath": "assets/images/one_of_them_days.png",
@@ -66,7 +88,7 @@
       "fileSize": "2.3GB"
     },
     {
-        "id": 7,
+        "id": 9,
         "title": "Disney's Snow White",
         "overview": "A live-action adaptation of the classic fairy tale, following Snow White as she embarks on a journey of self-discovery and bravery.",
         "posterPath": "assets/images/snow_white.png",
@@ -77,7 +99,7 @@
         "fileSize": "2.6GB"
     },
     {
-      "id": 8,
+      "id": 10,
       "title": "Dog Man",
       "overview": "An animated feature that's fun for the whole family.",
       "posterPath": "assets/images/dog_man.png",
@@ -88,7 +110,7 @@
       "fileSize": "2.1GB"
     },
     {
-      "id": 9,
+      "id": 11,
       "title": "Conclave",
       "overview": "A political thriller delving into the intricacies of power.",
       "posterPath": "assets/images/conclave.png",
@@ -99,7 +121,7 @@
       "fileSize": "2.5GB"
     },
     {
-      "id": 10,
+      "id": 12,
       "title": "Mufasa: The Lion King",
       "overview": "A prequel to the beloved classic, exploring Mufasa's origins.",
       "posterPath": "assets/images/mufasa_lion_king.png",
@@ -110,7 +132,7 @@
       "fileSize": "2.6GB"
     },
     {
-      "id": 11,
+      "id": 13,
       "title": "The Watchers",
       "overview": "A psychological thriller where characters are being watched by unknown forces.",
       "posterPath": "assets/images/the_watchers.png",
@@ -121,7 +143,7 @@
       "fileSize": "2.4GB"
     },
     {
-      "id": 12,
+      "id": 14,
       "title": "Inside Out 2",
       "overview": "A sequel to the beloved animated movie, exploring new emotions.",
       "posterPath": "assets/images/inside_out_2.png",
@@ -132,7 +154,7 @@
       "fileSize": "2.2GB"
     },
     {
-      "id": 13,
+      "id": 15,
       "title": "Deadpool & Wolverine",
       "overview": "The highly anticipated superhero action movie featuring Deadpool and Wolverine.",
       "posterPath": "assets/images/deadpool_wolverine.png",
@@ -143,7 +165,7 @@
       "fileSize": "2.8GB"
     },
     {
-      "id": 14,
+      "id": 16,
       "title": "Kingdom of the Planet of the Apes",
       "overview": "A sci-fi adventure exploring a new era of the Planet of the Apes franchise.",
       "posterPath": "assets/images/kingdom_planet_apes.png",
@@ -154,7 +176,7 @@
       "fileSize": "3.0GB"
     },
     {
-      "id": 15,
+      "id": 17,
       "title": "Godzilla x Kong: The New Empire",
       "overview": "The legendary battle continues between the Titans, Godzilla and King Kong.",
       "posterPath": "assets/images/godzilla_kong.png",

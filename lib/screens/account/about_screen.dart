@@ -7,13 +7,14 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppConstants.blackColor,
+      appBar: CustomAppBar(title: "About Us"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppBar(title: "About Us"), // Call the reusable AppBar
+              // CustomAppBar(title: "About Us"), // Call the reusable AppBar
               const SizedBox(height: 20),
               _buildSectionTitle("Welcome to MovieTime!"),
               const SizedBox(height: 10),

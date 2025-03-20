@@ -64,19 +64,18 @@ class _NewMovieScreenState extends State<NewMovieScreen> {
         hasMore = false;
       }
 
-      debugPrint("Before Update: ${displayedMovies.length} movies loaded.");
+      debugPrint("Before Update: \${displayedMovies.length} movies loaded.");
       displayedMovies = List.from(allMovies.take(nextMoviesCount));
-      debugPrint("After Update: ${displayedMovies.length} movies loaded.");
+      debugPrint("After Update: \${displayedMovies.length} movies loaded.");
 
       isLoading = false;
     });
   }
 
-
   int getCrossAxisCount(double screenWidth) {
-    if (screenWidth > 1200) return 5; // Large screens
-    if (screenWidth > 800) return 4;  // Tablets
-    return 3; // Default to 3 items per row for mobile
+    if (screenWidth > 1200) return 5;
+    if (screenWidth > 800) return 4;
+    return 3;
   }
 
   @override

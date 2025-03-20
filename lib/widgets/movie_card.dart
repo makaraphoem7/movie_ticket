@@ -10,8 +10,6 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('Movie Title: ${movie.title}');
-    print(movie);
     return GestureDetector(
       onTap: () {
         Navigator.push(

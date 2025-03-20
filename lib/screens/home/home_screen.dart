@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_application_1/widgets/custom_nav_bar.dart';
+import '../../screens/home/popular_movies_screen.dart';
+import 'filtered_movies_screen.dart';
+import 'widgets/category_list.dart';
+import '../../widgets/custom_nav_bar.dart';
 import '../../widgets/movie_all.dart';
 import '../../widgets/movie_card.dart';
 import '../../constants/app_constants.dart';
 import '../../widgets/movie_list.dart';
-import '../../widgets/movie_slide.dart';
+import 'widgets/movie_slide.dart';
 import '../../widgets/drawer_menu.dart';
-import '../../widgets/category_list.dart';
 import '../../data/mock_movies.dart';
 import '../../data/banner_slide.dart';
-import '../../data/categories.dart';
 import '../../data/models/movie.dart';
+import '../../data/models/category.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Movie> displayedPopularMovies = [];
   List<Movie> allMovies = [];
   List<Movie> displayedAllMovies = [];
+  List<Category> categories = [];
 
   int moviesPerPage = 10;
   bool isLoadingPopular = false;
@@ -40,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     loadPopularMovies();
     loadAllMovies();
+    loadCategories();
 
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 100) {
@@ -49,6 +53,19 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  Future<void> loadCategories() async {
+    try {
+      String jsonString = await rootBundle.loadString('assets/data/categories.json');
+      List<dynamic> jsonList = json.decode(jsonString);
+
+      setState(() {
+        categories = jsonList.map((json) => Category.fromJson(json)).toList();
+      });
+    } catch (e) {
+      debugPrint("Error loading categories: $e");
+    }
+  }
+
   Future<void> loadPopularMovies() async {
     try {
       String jsonString = await rootBundle.loadString('assets/data/popularmovie.json');
@@ -56,7 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       setState(() {
         allPopularMovies = jsonList.map((json) => Movie.fromJson(json)).toList();
-        displayedPopularMovies = allPopularMovies.take(moviesPerPage).toList();
+        displayedPopularMovies = allPopularMovies.take(
+          allPopularMovies.length < moviesPerPage ? allPopularMovies.length : moviesPerPage
+        ).toList();
       });
     } catch (e) {
       debugPrint("Error loading popular movies: $e");
@@ -91,7 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       setState(() {
         allMovies = jsonList.map((json) => Movie.fromJson(json)).toList();
-        displayedAllMovies = allMovies.take(moviesPerPage).toList();
+        displayedAllMovies = allMovies.take(
+          allMovies.length < moviesPerPage ? allMovies.length : moviesPerPage
+        ).toList();
       });
     } catch (e) {
       debugPrint("Error loading all movies: $e");
@@ -128,7 +149,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final banners = BannerSlide.getBanners();
-    final categories = Categories.getCategories();
 
     return Scaffold(
       drawer: CustomDrawer(
@@ -142,7 +162,22 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CategoryList(categories: categories),
+            CategoryList(
+              categories: categories,
+              onCategorySelected: (int selectedCategoryId) { 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FilteredMoviesScreen(
+                      allMovies: allMovies,
+                      selectedCategoryIds: [selectedCategoryId], 
+                      categories: categories,
+                    ),
+                  ),
+                );
+              },
+            ),
+
             BannerSlider(banners: banners),
 
             Padding(
@@ -156,7 +191,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Navigate to see all movies
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>  PopularMoviesScreen(movies: allPopularMovies),
+                        ),
+                      );
                     },
                     child: Text(
                       'See All',

@@ -1,0 +1,78 @@
+[
+    {
+    "id": 0,
+    "name": "All",
+    "movies": [1, 16]
+    },
+    {
+    "id": 1,
+    "name": "Romance",
+    "movies": [31,32,33]
+    },
+    {
+    "id": 2,
+    "name": "Thriller",
+    "movies": [1, 16]
+    },
+    {
+    "id": 3,
+    "name": "Horror",
+    "movies": [2]
+    },
+    {
+    "id": 4,
+    "name": "Sci-Fi",
+    "movies": [3, 10]
+    },
+    {
+    "id": 5,
+    "name": "Historical Drama",
+    "movies": [4, 14, 31, 32, 33]
+    },
+    {
+    "id": 6,
+    "name": "Political Drama",
+    "movies": [5]
+    },
+    {
+    "id": 7,
+    "name": "Crime",
+    "movies": [6, 18]
+    },
+    {
+    "id": 8,
+    "name": "Action",
+    "movies": [7, 18]
+    },
+    {
+    "id": 9,
+    "name": "Fantasy",
+    "movies": [8, 11, 12, 17, 19]
+    },
+    {
+    "id": 10,
+    "name": "War",
+    "movies": [9]
+    },
+    {
+    "id": 11,
+    "name": "Martial Arts",
+    "movies": [15]
+    },
+    {
+    "id": 12,
+    "name": "Adventure",
+    "movies": [13, 19]
+    },
+    {
+    "id": 13,
+    "name": "Mystery",
+    "movies": [20]
+    },
+    {
+    "id": 14,
+    "name": "Drama",
+    "movies": [17, 20, 31, 32, 33]
+    }
+   
+]

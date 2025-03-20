@@ -163,5 +163,39 @@
       "movieType": "Martial Arts",
       "timerofmovie": "2h 14m",
       "megabyteofmovie": "2.3GB"
+    },
+    {
+      "id": 16,
+      "title": "Love in the Clouds - Episode 25",
+      "overview": "As their love deepens, unexpected challenges arise, testing their commitment under the dreamy sky.",
+      "posterPath": "assets/images/love_in_the_clouds_ep25.png",
+      "voteAverage": 8.2,
+      "releaseDate": "2024-03-15",
+      "movieType": "Romance, Drama",
+      "timerofmovie": "1h 5m",
+      "megabyteofmovie": "1.8GB"
+    },
+    {
+      "id": 17,
+      "title": "The Glory",
+      "overview": "A woman who suffered severe school bullying sets out to take revenge on her tormentors years later.",
+      "posterPath": "assets/images/the_glory.png",
+      "voteAverage": 8.9,
+      "releaseDate": "2022-12-30",
+      "movieType": "Thriller, Drama, Revenge",
+      "timerofmovie": "16 Episodes",
+      "megabyteofmovie": "Varies"
+    },
+    {
+      "id": 18,
+      "title": "The Glory of Tang Dynasty",
+      "overview": "Set during the Tang Dynasty, this historical drama follows Shen Zhenzhu as she navigates palace struggles, love, and war.",
+      "posterPath": "assets/images/the_glory_of_tang_dynasty.png",
+      "voteAverage": 8.1,
+      "releaseDate": "2017-01-29",
+      "movieType": "Historical, Romance, Drama",
+      "timerofmovie": "60 Episodes",
+      "megabyteofmovie": "Varies"
     }
+    
 ]

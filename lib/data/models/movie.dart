@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Movie {
   final int id;
   final String title;
@@ -10,6 +8,7 @@ class Movie {
   final String movieType;
   final String timerofmovie;
   final String megabyteofmovie;
+  final List<int> categoryIds;
 
   Movie({
     required this.id,
@@ -21,6 +20,7 @@ class Movie {
     required this.movieType,
     required this.timerofmovie,
     required this.megabyteofmovie,
+    required this.categoryIds,
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) {
@@ -36,6 +36,7 @@ class Movie {
       movieType: json['movieType'] ?? '',
       timerofmovie: json['timerofmovie'] ?? '',
       megabyteofmovie: json['megabyteofmovie'] ?? '',
+      categoryIds: (json['categoryIds'] as List<dynamic>?)?.map((id) => id as int).toList() ?? [],
     );
   }
 }

@@ -47,11 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        automaticallyImplyLeading: false, // Remove default leading spacing
-        title: const CustomAppBar(title: "Profile"), // Use CustomAppBar
-      ),
+      appBar: CustomAppBar(title: "Profile"),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
