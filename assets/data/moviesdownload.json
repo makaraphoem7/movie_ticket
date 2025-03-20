@@ -5,8 +5,7 @@
     "duration": "3:12:45",
     "size": "7GB",
     "progress": 70,
-    "image": "assets/images/Avatar.jpg",
-    "video": "assets/videos/avatar.mp4"
+    "image": "assets/images/Avatar.jpg"
   },
   {
     "title": "Black Panther: Wakanda Forever",
@@ -14,8 +13,7 @@
     "duration": "2:41:00",
     "size": "6GB",
     "progress": 50,
-    "image": "assets/images/BlackPanther.jpg",
-    "video": "assets/videos/black_panther.mp4"
+    "image": "assets/images/BlackPanther.jpg"
   },
   {
     "title": "John Wick 4",
@@ -23,7 +21,6 @@
     "duration": "2:49:00",
     "size": "5GB",
     "progress": 30,
-    "image": "assets/images/JohnWick4.jpg",
-    "video": "assets/videos/john_wick_4.mp4"
+    "image": "assets/images/JohnWick4.jpg"
   }
 ]

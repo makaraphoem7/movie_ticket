@@ -30,6 +30,8 @@ environment:
 dependencies:
   image_picker: ^1.0.7
   carousel_slider: ^4.2.1
+  video_player: ^2.3.0
+  youtube_player_flutter: ^8.0.0
   flutter:
     sdk: flutter
 

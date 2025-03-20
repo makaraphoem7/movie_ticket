@@ -4,21 +4,24 @@
       "title": "Sonic 3",
       "genre": "Action, Adventure",
       "duration": "2:50:52",
-      "size": "5GB"
+      "size": "5GB",
+       "video": "https://www.youtube.com/watch?v=d9MyW72ELq0"
     },
     {
       "image": "assets/images/dominion.jpg",
       "title": "Dominion",
       "genre": "Action, Adventure",
       "duration": "2:50:52",
-      "size": "5GB"
+      "size": "5GB",
+      "video": "https://www.youtube.com/watch?v=xjDjIWPwcPU"
     },
     {
       "image": "assets/images/captainmarvel.jpg",
       "title": "Captain Marvel",
       "genre": "Action, Adventure",
       "duration": "2:50:52",
-      "size": "5GB"
+      "size": "5GB",
+      "video": "https://www.youtube.com/watch?v=d9MyW72ELq0"
     }
   ]
   
