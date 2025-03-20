@@ -9,4 +9,6 @@ abstract class Routes {
   static const detailscreen = '/detailscreen';
   static const profilescreen = '/profilescreen';
   static const aboutUs = '/aboutusscreen';
+  static const subscriptionScreen = '/subscription';
+  static const paymentscreen = '/paymentscreen';
 }

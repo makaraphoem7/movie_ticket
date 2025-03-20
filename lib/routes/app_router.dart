@@ -8,6 +8,8 @@ import '../screens/auth/sign_up_screen.dart';
 import '../screens/boarding/open_app.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/detail/movie_detail_screen.dart';
+import '../screens/payments/payment_screen.dart';
+import '../screens/payments/subscription_screen.dart';
 import '../screens/search/search_screen.dart';
 import '../data/models/movie.dart';
 
@@ -62,13 +64,23 @@ class AppRouter {
           AboutUsScreen(),
           Routes.aboutUs,
         );
-      case Routes.detailscreen:
-       if (args is Movie) {
+      case Routes.subscriptionScreen:
         return _routeBuilder(
-          MovieDetailScreen(movie: args),
-          Routes.detailscreen,
+          SubscriptionScreen(),
+          Routes.subscriptionScreen,
         );
-  }
+      case Routes.paymentscreen:
+        return _routeBuilder(
+          PaymentScreen(),
+          Routes.paymentscreen,
+        );
+      case Routes.detailscreen:
+        if (args is Movie) {
+          return _routeBuilder(
+            MovieDetailScreen(movie: args),
+            Routes.detailscreen,
+          );
+        }
 
       default:
         return _errorRoute();

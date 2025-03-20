@@ -1,0 +1,20 @@
+[
+    {
+        "name": "ABA PAY",
+        "subtitle": "Top to pay with ABA mobile",
+        "price": "$1.60",
+        "image": "assets/images/aba_pay.png"
+    },
+    {
+        "name": "Wing",
+        "subtitle": "Top to pay with ABA mobile",
+        "price": "$1.60",
+        "image": "assets/images/wing.png"
+    },
+    {
+        "name": "ACLEDA mobile (Beta)",
+        "subtitle": "Top to pay with ABA mobile",
+        "price": "$1.60",
+        "image": "assets/images/acleda.png"
+    }
+]
