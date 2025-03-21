@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.only(top: 12, left: 10, right: 0, bottom: 0),
       child: Row(
         children: [
-          if (Navigator.canPop(context)) // Show back button only if possible to pop
+          if (Navigator.canPop(context))
             CircleAvatar(
               backgroundColor: Colors.white54,
               child: IconButton(
@@ -20,8 +20,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () => Navigator.pop(context),
               ),
             ),
-          if (Navigator.canPop(context)) const SizedBox(width: 15), // Add spacing if back button exists
-          if (title != null) // Show title only if provided
+          if (Navigator.canPop(context)) const SizedBox(width: 15),
+          if (title != null)
             Expanded(
               child: Text(
                 title!,
@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
-                overflow: TextOverflow.ellipsis, // Prevents long titles from breaking UI
+                overflow: TextOverflow.ellipsis,
               ),
             ),
         ],
@@ -39,5 +39,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(70); // Set height of app bar
+  Size get preferredSize => const Size.fromHeight(70);
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../../widgets/custom_app_bar.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MovieWatchScreen extends StatefulWidget {
-  final dynamic movie;  // This will hold the data of the movie passed from the previous screen.
+  final dynamic movie;
 
   MovieWatchScreen({required this.movie});
 
@@ -12,112 +13,84 @@ class MovieWatchScreen extends StatefulWidget {
 
 class _MovieWatchScreenState extends State<MovieWatchScreen> {
   late YoutubePlayerController _controller;
-  bool _isFullScreen = false;
+  String? videoId;
+  bool isControlsVisible = true;
 
   @override
   void initState() {
     super.initState();
 
-    // Ensure the 'video' URL is valid and extract the YouTube video ID
-    if (widget.movie['video'] != null && widget.movie['video'] is String) {
-      final videoUrl = widget.movie['video'];
-      final videoId = YoutubePlayer.convertUrlToId(videoUrl);
+    final videoUrl = widget.movie['video'];
+    videoId = YoutubePlayer.convertUrlToId(videoUrl);
 
-      if (videoId != null) {
-        // Initialize the YouTube player controller
-        _controller = YoutubePlayerController(
-          initialVideoId: videoId,
-          flags: YoutubePlayerFlags(
-            autoPlay: true,
-            mute: false,
-            loop: true,
-          ),
-        );
-      } else {
-        throw Exception("Video URL is invalid or missing.");
-      }
-    } else {
-      throw Exception("Video URL is invalid or missing.");
+    if (videoId != null) {
+      _controller = YoutubePlayerController(
+        initialVideoId: videoId!,
+        flags: YoutubePlayerFlags(
+          autoPlay: true,
+          mute: false,
+          loop: false,
+          enableCaption: false,
+        ),
+      );
     }
   }
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
-  // Fullscreen mode toggle function
-  void _toggleFullScreen() {
+  void toggleControls() {
     setState(() {
-      _isFullScreen = !_isFullScreen;
+      isControlsVisible = !isControlsVisible;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _isFullScreen
-          ? null // Hide AppBar when in full screen
-          : AppBar(
-              title: Text(widget.movie['title']),
+      backgroundColor: Colors.black,
+      appBar: CustomAppBar(title: widget.movie['title']),
+      body: videoId != null
+          ? Stack(
+              children: [
+                GestureDetector(
+                  onTap: toggleControls,
+                  child: YoutubePlayerBuilder(
+                    player: YoutubePlayer(
+                      controller: _controller,
+                      showVideoProgressIndicator: true,
+                      progressIndicatorColor: Colors.red,
+                    ),
+                    builder: (context, player) {
+                      return Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        child: player,
+                      );
+                    },
+                  ),
+                ),
+                if (isControlsVisible)
+                  Positioned(
+                    top: 40,
+                    left: 10,
+                    right: 10,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     
+                    ),
+                  ),
+              ],
+            )
+          : Center(
+              child: Text(
+                "Error: Invalid YouTube video URL",
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
             ),
-      body: GestureDetector(
-        onTap: _toggleFullScreen, // Toggle full-screen on tap
-        child: Center(
-          child: Stack(
-            children: [
-              // Full-screen video player
-              Positioned.fill(
-                child: YoutubePlayer(
-                  controller: _controller,
-                  showVideoProgressIndicator: true,
-                  progressIndicatorColor: Colors.red,
-                  onReady: () {},
-                ),
-              ),
-              // If not full screen, show the movie info on top
-              if (!_isFullScreen)
-                Positioned(
-                  top: 20,
-                  left: 10,
-                  right: 10,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.movie['title'],
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        widget.movie['genre'],
-                        style: TextStyle(fontSize: 16, color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-              // Full-screen toggle button
-              Positioned(
-                top: 20,
-                right: 20,
-                child: IconButton(
-                  icon: Icon(
-                    _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  onPressed: _toggleFullScreen,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

@@ -47,9 +47,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
               children: <Widget>[
                 _buildListTile(Icons.person, "Profile", 2),
                 _buildNotificationTile(),
-                _buildListTile(Icons.person_add, "Add Account", 3),
                 _buildListTile(Icons.info, "About Us", 4),
                 _buildLogoutTile(),
+                _buildDeleteAccountTile(),
               ],
             ),
           ],
@@ -71,7 +71,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
         } else {
           widget.onItemSelected(index);
         }
-
       },
     );
   }
@@ -91,6 +90,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
         });
         widget.onItemSelected(1);
       },
+    );
+  }
+
+  Widget _buildDeleteAccountTile() {
+    return ListTile(
+      leading: Icon(Icons.delete, color: AppConstants.whiteColor),
+      title: Text("Delete Account", style: TextStyle(color: AppConstants.whiteColor)),
+      onTap: () => _showDeleteAccountDialog(),
     );
   }
 
@@ -114,6 +121,25 @@ class _CustomDrawerState extends State<CustomDrawer> {
           onConfirm: () {
             Navigator.of(context).pop();
             Navigator.pushReplacementNamed(context, Routes.login);
+          },
+          onCancel: () => Navigator.of(context).pop(),
+        );
+      },
+    );
+  }
+
+  void _showDeleteAccountDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CustomDialog(
+          title: "Confirm Account Deletion",
+          message: "Are you sure you want to delete your account? This action cannot be undone.",
+          confirmText: "Delete",
+          cancelText: "Cancel",
+          onConfirm: () {
+            Navigator.of(context).pop();
+            Navigator.pushReplacementNamed(context, Routes.signup);
           },
           onCancel: () => Navigator.of(context).pop(),
         );

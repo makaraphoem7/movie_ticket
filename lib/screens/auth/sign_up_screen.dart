@@ -55,7 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   width: 200,
                   height: 200,
                 ),
-                const SizedBox(height: 32),
+                // const SizedBox(height: 10),
 
                 // Title
                 Text(

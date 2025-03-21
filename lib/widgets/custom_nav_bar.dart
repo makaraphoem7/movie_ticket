@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/routes/app_routes.dart';
 import '../screens/search/search_screen.dart';
 import '../screens/notifications/notification_screen.dart';
 import '../../constants/app_constants.dart';
@@ -67,10 +68,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
         IconButton(
           icon: Icon(Icons.search, color: AppConstants.whiteColor, size: 28),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SearchScreen()),
-            );
+            Navigator.pushNamed(context, Routes.searchscreen);
           },
         ),
         Stack(

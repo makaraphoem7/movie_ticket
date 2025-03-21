@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../constants/app_constants.dart';
 import '../../widgets/custom_input_field.dart';
-import '../../widgets/custom_app_bar.dart'; // Import the reusable AppBar
+import '../../widgets/custom_app_bar.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -65,7 +65,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           CircleAvatar(
                             radius: 50,
                             backgroundColor: AppConstants.secondaryColor,
-                            child: const Icon(Icons.person, size: 50, color: Colors.white),
+                            child: Icon(Icons.person, size: 50, color: AppConstants.whiteColor),
                           ),
                           Positioned(
                             bottom: 0,
@@ -74,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onTap: _toggleEditMode,
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: AppConstants.whiteColor,
                                   shape: BoxShape.circle,
                                   boxShadow: [
                                     BoxShadow(
@@ -156,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     child: Text(
                       _isEditing ? 'Save' : 'Edit',
-                      style: const TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18, color: AppConstants.whiteColor),
                     ),
                   ),
                 ),

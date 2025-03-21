@@ -70,10 +70,15 @@ class AppRouter {
           Routes.subscriptionScreen,
         );
       case Routes.paymentscreen:
-        return _routeBuilder(
-          PaymentScreen(),
-          Routes.paymentscreen,
-        );
+        if (args is Map<String, dynamic>) {
+          return _routeBuilder(
+            PaymentScreen(
+              selectedPlan: args['selectedPlan'],
+              price: args['price'],
+            ),
+            Routes.paymentscreen,
+          );
+        }
       case Routes.detailscreen:
         if (args is Movie) {
           return _routeBuilder(

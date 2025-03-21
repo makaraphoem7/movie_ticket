@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/routes/app_router.dart';
-
+import '../../routes/app_router.dart';
 import '../routes/app_routes.dart';
 import '../screens/payments/payment_screen.dart';
 
@@ -29,7 +28,6 @@ class Subscription extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Title Section
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -48,8 +46,6 @@ class Subscription extends StatelessWidget {
                     ),
                   ],
                 ),
-
-                // Price Section (Aligned Right)
                 RichText(
                   text: TextSpan(
                     children: [
@@ -87,12 +83,13 @@ class Subscription extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  AppRouter.pushNamed(Routes.paymentscreen);
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => const PaymentScreen()),
-                  // );
+                  AppRouter.navigatorKey.currentState?.pushNamed(
+                    Routes.paymentscreen,
+                    arguments: {
+                      'selectedPlan': title,
+                      'price': price,
+                    },
+                  );
                 },
                 child: const Text(
                   "Subscribe plan",

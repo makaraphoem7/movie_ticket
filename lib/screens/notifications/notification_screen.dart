@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../constants/app_constants.dart';
-import '../../widgets/custom_app_bar.dart'; // Import CustomAppBar
+import '../../widgets/custom_app_bar.dart';
 
 class NotificationScreen extends StatelessWidget {
   final List<Map<String, String>> notifications;
@@ -11,13 +11,7 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConstants.blackColor, // Black background
-      // appBar: AppBar(
-      //   backgroundColor: AppConstants.blackColor,
-      //   elevation: 0,
-      //   automaticallyImplyLeading: false, // Remove default leading spacing
-      //   title: const CustomAppBar(title: "Notifications"), // Use CustomAppBar
-      // ),
+      backgroundColor: AppConstants.blackColor,
       appBar: CustomAppBar(title: "Notifications"),
       body: notifications.isEmpty
           ? const Center(
@@ -33,7 +27,7 @@ class NotificationScreen extends StatelessWidget {
                 return Container(
                   margin: const EdgeInsets.symmetric(vertical: 8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.1), // Semi-transparent
+                    color: Colors.white.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
@@ -64,13 +58,13 @@ class NotificationScreen extends StatelessWidget {
                                 ),
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.notifications,
-                                color: Colors.white,
+                                color: AppConstants.whiteColor,
                                 size: 28,
                               ),
                             ),
-                            const SizedBox(width: 12), // Spacing
+                            const SizedBox(width: 12),
                             // Notification Details
                             Expanded(
                               child: Column(
@@ -78,8 +72,8 @@ class NotificationScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     notifications[index]["message"]!,
-                                    style: const TextStyle(
-                                      color: Colors.white,
+                                    style: TextStyle(
+                                      color: AppConstants.whiteColor,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16,
                                     ),

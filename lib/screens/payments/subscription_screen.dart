@@ -61,12 +61,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                 itemBuilder: (context, index) {
                   var plan = subscriptionPlans[index];
                   return Subscription(
-                    // context: context,
                     title: plan['title'],
                     duration: plan['duration'],
                     price: plan['price'],
-
-                    // price: "\$${plan['price']}${plan['duration']}");
                   );
                 },
               ),
