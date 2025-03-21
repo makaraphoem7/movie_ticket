@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../routes/app_routes.dart';
 import '../../constants/app_constants.dart';
 import '../../main.dart';
 
@@ -43,10 +44,11 @@ class _SplashScreenState extends State<SplashScreen>
   void _navigateToLogin() async {
     await Future.delayed(const Duration(seconds: 4));
     if (mounted) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const MainWrapper()),
-      );
+      Navigator.pushNamed(context, Routes.login);
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => const MainWrapper()),
+      // );
     }
   }
 
