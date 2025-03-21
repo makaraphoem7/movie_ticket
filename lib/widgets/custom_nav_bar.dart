@@ -53,8 +53,9 @@ class _CustomNavBarState extends State<CustomNavBar> {
           fontSize: 20,
         ),
       ),
-      backgroundColor: AppConstants.blackColor,
-      elevation: 4,
+      backgroundColor: Colors.black.withOpacity(0.5), // Semi-transparent black
+      elevation: 0, // Remove shadow
+      shadowColor: Colors.transparent, // No shadow
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
       ),

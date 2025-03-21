@@ -1,0 +1,22 @@
+ [
+    {
+    "id": 1,
+    "bannerImage": "assets/images/banner/the_rise_of_ning.png"
+    },
+    {
+    "id": 2,
+    "bannerImage": "assets/images/banner/great_shows.png"
+    },
+    {
+    "id": 3,
+    "bannerImage": "assets/images/banner/love_like_the_galaxy.png"
+    },
+    {
+    "id": 4,
+    "bannerImage": "assets/images/banner/dracin_romansa.png"
+    },
+    {
+    "id": 5,
+    "bannerImage": "assets/images/banner/moon_lover.png"
+    }
+]

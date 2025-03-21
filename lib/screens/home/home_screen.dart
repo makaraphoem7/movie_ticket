@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_application_1/data/models/movie_slide.dart';
 import '../../screens/home/popular_movies_screen.dart';
 import 'filtered_movies_screen.dart';
 import 'widgets/category_list.dart';
@@ -29,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Movie> allMovies = [];
   List<Movie> displayedAllMovies = [];
   List<Category> categories = [];
+  List<CustomBanner> banners = []; // Stores banners
 
   int moviesPerPage = 10;
   bool isLoadingPopular = false;
@@ -44,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
     loadPopularMovies();
     loadAllMovies();
     loadCategories();
+    loadBanners();
 
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 100) {
@@ -140,6 +143,37 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  Future<void> loadBanners() async {
+    try {
+      String jsonString = await rootBundle.loadString('assets/data/slide.json');
+
+      // Debugging: Print raw JSON string
+      debugPrint("Raw JSON: $jsonString");
+
+      List<dynamic> jsonList = json.decode(jsonString);
+
+      if (jsonList.isEmpty) {
+        debugPrint("Error: JSON list is empty.");
+        return;
+      }
+
+      setState(() {
+        banners = jsonList.map((json) {
+          // Debugging: Check if 'bannerImage' is null
+          if (json['bannerImage'] == null) {
+            debugPrint("Warning: Found a null bannerImage in JSON.");
+          }
+
+          return CustomBanner.fromJson(json);
+        }).toList();
+      });
+
+      debugPrint("Banners loaded successfully: ${banners.length}");
+    } catch (e) {
+      debugPrint("Error loading banners: $e");
+    }
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -148,8 +182,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final banners = BannerSlide.getBanners();
-
     return Scaffold(
       drawer: CustomDrawer(
         onItemSelected: (index) {
@@ -178,7 +210,10 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
 
-            BannerSlider(banners: banners),
+            // **Banner Slider**
+            banners.isEmpty
+                ? const Center(child: CircularProgressIndicator())
+                : BannerSlider(banners: banners),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
