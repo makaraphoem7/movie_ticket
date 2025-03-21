@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/app_constants.dart';
 import '../../main.dart';
-import '../../routes/app_routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,6 +14,7 @@ class _SplashScreenState extends State<SplashScreen>
   late AnimationController _controller;
   late Animation<double> _opacityAnimation;
   late Animation<double> _scaleAnimation;
+  late Animation<double> _backgroundScale;
 
   @override
   void initState() {
@@ -23,29 +23,30 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: const Duration(seconds: 2),
     );
+
     _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeIn,
-      ),
+      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
-    _scaleAnimation = Tween<double>(begin: 0.8, end: 1.2).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeOut,
-      ),
+
+    _scaleAnimation = Tween<double>(begin: 0.8, end: 1.1).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOut),
     );
+
+    _backgroundScale = Tween<double>(begin: 1.0, end: 1.2).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+
     _controller.forward();
     _navigateToLogin();
   }
+
   void _navigateToLogin() async {
     await Future.delayed(const Duration(seconds: 4));
     if (mounted) {
-      Navigator.pushReplacementNamed(context, Routes.login);
-        // Navigator.pushReplacement(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => const MainWrapper()),
-        // );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const MainWrapper()),
+      );
     }
   }
 
@@ -58,25 +59,50 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConstants.blackColor,
-      body: Center(
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return Opacity(
-              opacity: _opacityAnimation.value,
-              child: Transform.scale(
-                scale: _scaleAnimation.value,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Background with slight zoom-in effect
+          AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return Transform.scale(
+                scale: _backgroundScale.value,
                 child: child,
-              ),
-            );
-          },
-          child: Image.asset(
-            'assets/images/logo_app.png',
-            height: 300,
-            width: 300,
+              );
+            },
+            child: Image.asset(
+              'assets/images/movie_collage.png',
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
+
+          // Black blur overlay
+          Container(
+            color: Colors.black.withOpacity(0.7),
+          ),
+
+          // Animated Logo
+          Center(
+            child: AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return Opacity(
+                  opacity: _opacityAnimation.value,
+                  child: Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: child,
+                  ),
+                );
+              },
+              child: Image.asset(
+                'assets/images/logo.png',
+                height: 180,
+                width: 180,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

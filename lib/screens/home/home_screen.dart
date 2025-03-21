@@ -188,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
           debugPrint('Selected index: $index');
         },
       ),
-      appBar: const CustomNavBar(title: "Movie App"),
+      appBar: const CustomNavBar(title: "PopcornTime"),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(

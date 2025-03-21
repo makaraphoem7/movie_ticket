@@ -65,7 +65,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           CircleAvatar(
                             radius: 50,
                             backgroundColor: AppConstants.secondaryColor,
-                            child: Icon(Icons.person, size: 50, color: AppConstants.whiteColor),
+                            backgroundImage: AssetImage('assets/images/profile_girl.png'),
                           ),
                           Positioned(
                             bottom: 0,
@@ -94,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const SizedBox(height: 16),
                       Text(
                         _nameController.text,
-                        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.grey[300]),
                       ),
                       Text(
                         _emailController.text,

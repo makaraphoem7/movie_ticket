@@ -33,7 +33,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       padding: const EdgeInsets.only(top: 15),
                       child: CircleAvatar(
                         radius: 50,
-                        backgroundImage: AssetImage('assets/images/logo_app.png'),
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage('assets/images/logo.png'),
                       ),
                     ),
                     const SizedBox(height: 20),
